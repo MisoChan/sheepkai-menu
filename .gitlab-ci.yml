@@ -22,9 +22,9 @@ stages:          # List of stages for jobs, and their order of execution
 
 build-job:       # This job runs in the build stage, which runs first.
   stage: build
-  image: node:12
+  image: "node:12"
   script:
-    - 
+    - npm run lint
     - echo "Compiling the code..."
     - echo "Compile complete."
 
