@@ -20,20 +20,15 @@ stages:          # List of stages for jobs, and their order of execution
   - deploy
 
 
-build-job:       # This job runs in the build stage, which runs first.
+build-and-lint-job:       # This job runs in the build stage, which runs first.
   stage: build
   image: "node:lts-alpine"
   script:
     - npm install
+    - npm run lint
     - echo "Compiling the code..."
     - echo "Compile complete."
 
-lint-job:
-  stage: lint
-  image: "node:lts-alpine"
-  script:
-    - npm install
-    - npm run lint
     
 unit-test-job:   # This job runs in the test stage.
   stage: test    # It only starts when the job in the build stage completes successfully.
