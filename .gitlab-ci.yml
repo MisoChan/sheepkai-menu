@@ -23,14 +23,12 @@ stages:          # List of stages for jobs, and their order of execution
 build-job:       # This job runs in the build stage, which runs first.
   stage: build
   image: nginx
-  tags: sheepkai-test
   script:
     - echo "Compiling the code..."
     - echo "Compile complete."
 
 lint-job:
   stage: lint
-  tags: sheepkai-test
   script:
     - npm run lint
     
