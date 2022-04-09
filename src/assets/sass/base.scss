@@ -1,0 +1,80 @@
+@use "commons/color_variables.scss" as color_variables;
+
+input[type="text"] {
+  border: 1px solid;
+  border-color: color_variables.$background_color;
+  padding: 0.5em 0.5em 0.5em;
+  margin: 0.2em;
+
+  &:focus {
+    background: color_variables.$background_color;
+  }
+}
+
+input[type="button"] {
+  border: 0px solid;
+}
+
+html {
+  height: 100%;
+  background: color_variables.$background_color;
+}
+
+div {
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  margin: 0;
+}
+
+#app {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#main {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.btn_standard {
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  background-color: color_variables.$main_color;
+  color: color_variables.$white_background;
+  border: none;
+  box-shadow: 2px 2px 4px color_variables.$shadow_color_standard;
+  &:active {
+    background-color: color_variables.$main_color_activated;
+    box-shadow: none;
+  }
+
+  &:disabled {
+    background-color: color_variables.$main_color_disabled;
+  }
+}
+
+.btn_danger {
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  background-color: color_variables.$accent_color_red;
+  color: color_variables.$white_background;
+  border: none;
+  box-shadow: 2px 2px 4px color_variables.$shadow_color_standard;
+  &:active {
+    background-color: color_variables.$accent_color_red_activated;
+    box-shadow: none;
+  }
+
+  &:disabled {
+    background-color: color_variables.$accent_color_red_disabled;
+  }
+}
