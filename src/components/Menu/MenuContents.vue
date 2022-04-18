@@ -6,7 +6,7 @@
     </div>
   </div>
 </template>
-
+<style lang="scss" scoped src="@/assets/sass/menu/menu_contents.scss"></style>
 <script>
 export default {
   props: {
