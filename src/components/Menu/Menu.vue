@@ -29,27 +29,27 @@ export default {
     return {
       menu_contents: [
         {
-          imagesrc: "@/static",
+          imagesrc: "/icons/TV.png",
           contents_title: "What's New?",
           link: "whats_new",
         },
         {
-          imagesrc: "@/static",
+          imagesrc: "/icons/Bin_Bon_Run.png",
           contents_title: "それシス",
           link: "blog",
         },
         {
-          imagesrc: "@/static",
+          imagesrc: "/icons/tool_modoki.png",
           contents_title: "Tools",
           link: "tools",
         },
         {
-          imagesrc: "@/static",
+          imagesrc: "/icons/Radio_Tekina_Something.png",
           contents_title: "About Us",
           link: "about",
         },
         {
-          imagesrc: "@/static",
+          imagesrc: "/icons/Eating_boxchan.png",
           contents_title: "Contact",
           link: "contact",
         },
