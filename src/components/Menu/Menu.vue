@@ -31,17 +31,17 @@ export default {
         {
           imagesrc: "/icons/TV.png",
           contents_title: "What's New?",
-          link: "whats_new",
+          link: "article",
         },
         {
           imagesrc: "/icons/Bin_Bon_Run.png",
           contents_title: "それシス",
-          link: "blog",
+          link: "article",
         },
         {
           imagesrc: "/icons/tool_modoki.png",
           contents_title: "Tools",
-          link: "tools",
+          link: "article",
         },
         {
           imagesrc: "/icons/Radio_Tekina_Something.png",

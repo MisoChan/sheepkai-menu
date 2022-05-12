@@ -1,0 +1,21 @@
+@use "../commons/color_variables.scss" as color_variables;
+
+@media screen and (max-width:1299px) and (min-width:820px){
+    #article_view_wrapper {
+        width: 760px;
+    }
+}
+@media screen and (min-width:1300px){
+    #article_view_wrapper {
+        width: 1200px;
+    }
+}
+#article_view_wrapper {
+  height: 100%;
+  
+  background-color: color_variables.$article_background_color;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
