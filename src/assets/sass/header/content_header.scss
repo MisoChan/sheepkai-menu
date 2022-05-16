@@ -1,3 +1,40 @@
+@use "../commons/color_variables.scss" as color_variables;
+@use "../mixin.scss" as mixin;
 #content_head {
-    
-} 
+  width: 100%;
+  height: 30px;
+  background-color: color_variables.$contents_header_background_color;
+}
+#content_head_wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1.2fr 4fr 1.2fr;
+  div {
+    color: color_variables.$white_background;
+    height: 100%;
+    margin-top: 0 auto;
+  }
+}
+#content_head_title {
+  text-align: center;
+}
+#content_head_title {
+  text-align: center;
+}
+@include mixin.media(pc) {
+  #header_site_title {
+    visibility: visible;
+    margin-left: 5%;
+  }
+}
+@include mixin.media(tab) {
+  #header_site_title {
+    visibility: hidden
+  }
+}
+@include mixin.media(sp) {
+  #header_site_title {
+    visibility: hidden
+  }
+}

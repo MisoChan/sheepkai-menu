@@ -1,17 +1,18 @@
 @use "../commons/color_variables.scss" as color_variables;
-@media screen and (max-width:820px) {
+@use "../mixin.scss" as mixin;
+@include mixin.media(sp) {
     #article_view_wrapper {
         width: 97%;
     }
 }
-@media screen and (max-width:1299px) and (min-width:820px){
+@include mixin.media(tab) {
     #article_view_wrapper {
         width: 800px;
     }
 }
-@media screen and (min-width:1300px){
+@include mixin.media(pc) {
     #article_view_wrapper {
-        width: 1200px;
+        width: 1000px;
     }
 }
 #article_view_wrapper {
