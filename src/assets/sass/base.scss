@@ -27,7 +27,10 @@ body {
   height: 100%;
   margin: 0;
 }
-
+a {
+  
+  color: color_variables.$base_linkcolor;
+}
 
 #app {
   height: 100%;
@@ -48,7 +51,7 @@ body {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   background-color: color_variables.$main_color;
-  color: color_variables.$white_background;
+  color: color_variables.$white_textcolor;
   border: none;
   box-shadow: 2px 2px 4px color_variables.$shadow_color_standard;
   &:active {
@@ -68,7 +71,7 @@ body {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   background-color: color_variables.$accent_color_red;
-  color: color_variables.$white_background;
+  color: color_variables.$white_textcolor;
   border: none;
   box-shadow: 2px 2px 4px color_variables.$shadow_color_standard;
   &:active {
