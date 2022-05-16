@@ -1,8 +1,9 @@
 <template>
   <div id="article_view_wrapper">
-    qqqq
-    <div class="article_side_menu"></div>
-    <div class="article_body"></div>
+    <div id="artical_view">
+      <div class="article_body">bodebode</div>
+      <div class="article_side_menu">menu_copyrights</div>
+    </div>
   </div>
 </template>
 
