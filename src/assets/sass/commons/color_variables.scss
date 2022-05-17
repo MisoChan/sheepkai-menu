@@ -1,28 +1,31 @@
 // メインテーマ色
-$background_color : #999999;
+$background_color: #999999;
 $main_color: #697068;
 
 //記事背景色
-$article_background_color : #d3d3d3;
-
+$article_background_color: #f7f7f7;
+$article_body_background_color: #f7f7f7; //記事本文部のバックグラウンドカラー
+$article_border_color: #424242;
+$article_pagetitle_textcolor: #3d3d3d;
 //ヘッダ
 //背景色
-$contents_header_background_color : #424242;
+$contents_header_background_color: #525252;
 
 //ボタン色有効無効
-$main_color_activated:  #adadad;
-$main_color_disabled:  #949494;
+$main_color_activated: #adadad;
+$main_color_disabled: #949494;
 
-// 白
-$white_textcolor: #FAF6FA;
-
+// 白文字色
+$white_textcolor: #faf6fa;
+// 文字色
+$base_textcolor: #2e2e2e;
 //link色
 $base_linkcolor: #424242;
 
 // 陰影色
-$shadow_color_standard : #adadad;
+$shadow_color_standard: #adadad;
 
 //アクセント色
-$accent_color_red : #fd8080;
-$accent_color_red_activated : #e97070;
-$accent_color_red_disabled : #ffa9a0bb;
+$accent_color_red: #fd8080;
+$accent_color_red_activated: #e97070;
+$accent_color_red_disabled: #ffa9a0bb;
