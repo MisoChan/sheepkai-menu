@@ -2,19 +2,20 @@
   <div id="article_view_wrapper">
     <div id="article_top_wrapper">
       <div id="article_title_wrapper">
-        <div id="article_title">それシス</div>
-        <div id="article_title_sub">それとなくシステムな毎日</div>
+        <div id="article_title">タイトル</div>
+        <div id="article_title_sub">サブタイトル</div>
       </div>
       <div id="article_top_information">
         <div>
-          <div id="article_author">著者: ナノ式</div>
+          <div id="article_author">著者: あああああ</div>
           <div id="article_reflesh_date">最終更新日: 2022/05/17</div>
         </div>
       </div>
     </div>
-    <div id="artical_view">
+    <div id="article_border"></div>
+    <div id="article_view">
       <div id="article_body">bodebode</div>
-      <div class="article_side_menu">
+      <div id="article_side_menu">
         <div class="article_side_contents">menu_contents</div>
         <div class="article_side_contents">menu_contents</div>
         <div class="article_side_contents">menu_contents</div>
