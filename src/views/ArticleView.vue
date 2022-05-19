@@ -12,7 +12,12 @@
         </div>
       </div>
     </div>
-    <div id="article_border"></div>
+    <div id="article_border">
+      <div id="article_border_links">
+        <div class="border_link"><router-link to="/">HOME</router-link></div>
+        <hr />
+      </div>
+    </div>
     <div id="article_view">
       <div id="article_body">bodebode</div>
       <div id="article_side_menu">
