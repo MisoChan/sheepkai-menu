@@ -19,7 +19,7 @@
       </div>
     </div>
     <div id="article_view">
-      <div id="article_body">bodebode</div>
+      <div id="article_body"><MarkdownView></MarkdownView></div>
       <div id="article_side_menu">
         <div class="article_side_contents">menu_contents</div>
         <div class="article_side_contents">menu_contents</div>
@@ -30,3 +30,12 @@
 </template>
 
 <style lang="scss" scoped src="@/assets/sass/article/article.scss"></style>
+
+<script>
+import MarkdownView from "@/components/article/MarkdownViewer.vue";
+export default {
+  components: {
+    MarkdownView,
+  },
+};
+</script>
