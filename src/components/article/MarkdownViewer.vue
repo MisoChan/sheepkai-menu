@@ -5,9 +5,15 @@
 <script>
 import { marked } from "marked";
 export default {
+  props: {
+    markdownText: {
+      Type: String,
+      Require: true,
+    },
+  },
   computed: {
     markdownData() {
-      return marked("# このページについて    \n ## aaaa");
+      return marked(this.markdownText);
     },
   },
 };

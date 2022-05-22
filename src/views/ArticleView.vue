@@ -19,11 +19,11 @@
       </div>
     </div>
     <div id="article_view">
-      <div id="article_body"><MarkdownView></MarkdownView></div>
+      <div id="article_body">
+        <MarkdownView :markdownText="markdown_data"></MarkdownView>
+      </div>
       <div id="article_side_menu">
-        <div class="article_side_contents">menu_contents</div>
-        <div class="article_side_contents">menu_contents</div>
-        <div class="article_side_contents">menu_contents</div>
+        <MarkdownHeaderList :markdownText="markdown_data"></MarkdownHeaderList>
       </div>
     </div>
   </div>
@@ -33,9 +33,17 @@
 
 <script>
 import MarkdownView from "@/components/article/MarkdownViewer.vue";
+import MarkdownHeaderList from "@/components/article/MarkdownHeaderList.vue";
 export default {
+  data: function () {
+    return {
+      markdown_data:
+        "# Now loading.... \n ### ちょっとまってね… \n # これはテストです。",
+    };
+  },
   components: {
     MarkdownView,
+    MarkdownHeaderList,
   },
 };
 </script>
