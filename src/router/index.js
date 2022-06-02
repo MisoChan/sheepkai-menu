@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ContentView from "../views/ContentView.vue";
 import ArticleView from "../views/ArticleView.vue";
-import PageNotFound from "../views/errorpage/404_PageNotFound.vue";
+import PageNotFound from "../views/errorpage/ErrorPageView.vue";
 
 const routes = [
   {
