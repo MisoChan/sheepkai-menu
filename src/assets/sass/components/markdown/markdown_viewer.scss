@@ -1,0 +1,13 @@
+@use "../../commons/color_variables.scss" as color_variables;
+@use "../../mixin.scss" as mixin;
+
+.markdown_viewer {
+  padding: 0px 1em 0px 1em;
+  > ::v-deep * {
+    padding: 0px 0em 0px 0.5em;
+  }
+  > ::v-deep h1 {
+    padding: 0px 0em 0px 0em;
+    border-bottom: 1px solid color_variables.$md_header_border;
+  }
+}

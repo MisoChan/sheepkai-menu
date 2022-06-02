@@ -35,11 +35,15 @@
 import MarkdownView from "@/components/article/MarkdownViewer.vue";
 import MarkdownHeaderList from "@/components/article/MarkdownHeaderList.vue";
 export default {
-  data: function () {
-    return {
-      markdown_data:
-        "# Now loading.... \n ### ちょっとまってね… \n # これはテストです。",
-    };
+  methods: {
+    mmaa(a) {
+      this.aadata = a;
+    },
+  },
+  computed: {
+    markdown_data() {
+      return "# Now loading.... \n ### ちょっとまってね… ";
+    },
   },
   components: {
     MarkdownView,

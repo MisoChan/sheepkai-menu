@@ -1,5 +1,9 @@
 <template>
-  <div v-for="header in markdownHeaderData" :key="header.id">
+  <div
+    class="header_title"
+    v-for="header in markdownHeaderData"
+    :key="header.id"
+  >
     {{ header.title }}
   </div>
 </template>
