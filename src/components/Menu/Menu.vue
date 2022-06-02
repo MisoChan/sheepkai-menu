@@ -14,7 +14,11 @@
     </div>
   </div>
 </template>
-<style lang="scss" scoped src="@/assets/sass/menu/main_menu.scss"></style>
+<style
+  lang="scss"
+  scoped
+  src="@/assets/sass/components/menu/main_menu.scss"
+></style>
 <script>
 import MenuContents from "@/components/Menu/MenuContents.vue";
 export default {

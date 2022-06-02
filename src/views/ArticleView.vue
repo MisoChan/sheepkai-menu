@@ -12,16 +12,38 @@
         </div>
       </div>
     </div>
-    <div id="article_border"></div>
+    <div id="article_border">
+      <div id="article_border_links">
+        <div class="border_link"><router-link to="/">HOME</router-link></div>
+        <hr />
+      </div>
+    </div>
     <div id="article_view">
-      <div id="article_body">bodebode</div>
+      <div id="article_body">
+        <MarkdownView :markdownText="markdown_data"></MarkdownView>
+      </div>
       <div id="article_side_menu">
-        <div class="article_side_contents">menu_contents</div>
-        <div class="article_side_contents">menu_contents</div>
-        <div class="article_side_contents">menu_contents</div>
+        <MarkdownHeaderList :markdownText="markdown_data"></MarkdownHeaderList>
       </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped src="@/assets/sass/article/article.scss"></style>
+
+<script>
+import MarkdownView from "@/components/article/MarkdownViewer.vue";
+import MarkdownHeaderList from "@/components/article/MarkdownHeaderList.vue";
+export default {
+  data: function () {
+    return {
+      markdown_data:
+        "# Now loading.... \n ### ちょっとまってね… \n # これはテストです。",
+    };
+  },
+  components: {
+    MarkdownView,
+    MarkdownHeaderList,
+  },
+};
+</script>

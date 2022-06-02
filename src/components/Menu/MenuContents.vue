@@ -10,7 +10,11 @@
     </router-link>
   </div>
 </template>
-<style lang="scss" scoped src="@/assets/sass/menu/menu_contents.scss"></style>
+<style
+  lang="scss"
+  scoped
+  src="@/assets/sass/components/menu/menu_contents.scss"
+></style>
 <script>
 export default {
   props: {
