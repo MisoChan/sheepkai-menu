@@ -10,6 +10,7 @@
 
 <script>
 import { marked } from "marked";
+import { sanitizeHtml } from "sanitize-html";
 export default {
   props: {
     markdownText: {
@@ -17,11 +18,20 @@ export default {
       Require: true,
       Default: "# Now loading...",
     },
+    isSanitized: {
+      Type: Boolean,
+      Require: true,
+      Default: true,
+    },
   },
   computed: {
     markdownData() {
       const mdtext = this.markdownText ?? "# Now loading...";
-      return marked(mdtext, { isSanitized: true });
+      const converted_md = marked(mdtext);
+      if (this.isSanitized) {
+        return sanitizeHtml(converted_md);
+      }
+      return converted_md;
     },
   },
 };
