@@ -15,11 +15,13 @@ export default {
     markdownText: {
       Type: String,
       Require: true,
+      Default: "# Now loading...",
     },
   },
   computed: {
     markdownData() {
-      return marked(this.markdownText);
+      const mdtext = this.markdownText ?? "# Now loading...";
+      return marked(mdtext, { isSanitized: true });
     },
   },
 };

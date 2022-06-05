@@ -2,13 +2,17 @@
   <div id="article_view_wrapper">
     <div id="article_top_wrapper">
       <div id="article_title_wrapper">
-        <div id="article_title">タイトル</div>
-        <div id="article_title_sub">サブタイトル</div>
+        <div id="article_title">{{ article_property.article_title }}</div>
+        <div id="article_title_sub">
+          {{ article_property.article_subtitle }}
+        </div>
       </div>
       <div id="article_top_information">
         <div>
-          <div id="article_author">著者: あああああ</div>
-          <div id="article_reflesh_date">最終更新日: 2022/05/17</div>
+          <div id="article_author">著者:ナノ式</div>
+          <div id="article_reflesh_date">
+            最終更新: {{ article_property.upload_date }}
+          </div>
         </div>
       </div>
     </div>
@@ -20,10 +24,15 @@
     </div>
     <div id="article_view">
       <div id="article_body">
-        <MarkdownView :markdownText="markdown_data"></MarkdownView>
+        <MarkdownView
+          :markdownText="article_property.article_md_text"
+          ref="mdview"
+        ></MarkdownView>
       </div>
       <div id="article_side_menu">
-        <MarkdownHeaderList :markdownText="markdown_data"></MarkdownHeaderList>
+        <MarkdownHeaderList
+          :markdownText="article_property.article_md_text"
+        ></MarkdownHeaderList>
       </div>
     </div>
   </div>
@@ -35,16 +44,19 @@
 import MarkdownView from "@/components/article/MarkdownViewer.vue";
 import MarkdownHeaderList from "@/components/article/MarkdownHeaderList.vue";
 export default {
-  methods: {
-    mmaa(a) {
-      this.aadata = a;
-    },
+  data: function () {
+    return {
+      article_property: {},
+    };
   },
-  computed: {
-    markdown_data() {
-      return "# Now loading.... \n ### ちょっとまってね… ";
-    },
+  created: function () {
+    this.$http
+      .get("/getArticle", {
+        params: { function_cd: "ABOUT_US", article_url: "aboutpage" },
+      })
+      .then((response) => (this.article_property = response.data));
   },
+  computed: {},
   components: {
     MarkdownView,
     MarkdownHeaderList,

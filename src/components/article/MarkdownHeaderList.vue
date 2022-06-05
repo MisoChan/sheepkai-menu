@@ -19,20 +19,21 @@ export default {
   },
   computed: {
     markdownHeaderData() {
-      let htmldata = marked(this.markdownText);
+      const mdtext = this.markdownText ?? "# Now loading...";
+      let htmldata = marked(mdtext);
       //HTML文字列からDOMパーサにかけてHTMLとして処理できるようにする;
       const parsedhtml = new DOMParser().parseFromString(htmldata, "text/html");
-      const h1collection = parsedhtml.getElementsByTagName("h1");
+      const h2collection = parsedhtml.getElementsByTagName("h2");
 
-      // 取得できたH1の配列を指定のObjectに変換する
-      const h1array = Array.from(h1collection).map((row) => {
+      // 取得できたH2の配列を指定のObjectに変換する
+      const h2array = Array.from(h2collection).map((row) => {
         let result = {
           id: row.id,
           title: row.textContent,
         };
         return result;
       });
-      return h1array;
+      return h2array;
     },
   },
 };
