@@ -26,7 +26,7 @@
       <div id="article_body">
         <MarkdownView
           :markdownText="article_property.article_md_text"
-          ref="mdview"
+          :isSanitized="article_property.is_sanitized"
         ></MarkdownView>
       </div>
       <div id="article_side_menu">

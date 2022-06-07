@@ -4,6 +4,7 @@ import router from "./router";
 import store from "./store";
 import axios from "axios";
 import VueAxios from "vue-axios";
+import VueSanitize from "vue-3-sanitize";
 require("@/assets/sass/commons/color_variables.scss");
 require("@/assets/sass/base.scss");
 require("@/assets/sass/nomalize.scss");
@@ -22,4 +23,10 @@ const axiosApp = axios.create({
     "X-REQUESTED-BY-MEKURI-APP": "Blog",
   },
 });
-createApp(App).use(VueAxios, axiosApp).use(store).use(router).mount("#app");
+const sanitizeOptions = {};
+createApp(App)
+  .use(VueAxios, axiosApp)
+  .use(VueSanitize, sanitizeOptions)
+  .use(store)
+  .use(router)
+  .mount("#app");

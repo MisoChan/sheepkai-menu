@@ -16,7 +16,6 @@ input[type="button"] {
 }
 
 html {
-  height: 100%;
   background: color_variables.$background_color;
 }
 
@@ -28,21 +27,25 @@ body {
   margin: 0;
 }
 a {
-  
   color: color_variables.$base_linkcolor;
 }
 
 #app {
-  height: 100%;
   margin: 0;
   padding: 0;
-  
+  height: 100%;
 }
 #bg_img {
   height: 100%;
   background-size: 320px;
   background-repeat: space;
   background-image: url("~@/assets/Sheepkai.net_moji.png");
+  background-attachment: fixed;
+  background-position: center;
+}
+
+body > #bg_img {
+  height: auto; /* 要素を超えた分の背景が伸びないブラウザ用 */
 }
 .btn_standard {
   border-radius: 3px;
