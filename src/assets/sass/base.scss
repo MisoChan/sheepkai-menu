@@ -16,7 +16,14 @@ input[type="button"] {
 }
 
 html {
+  min-height: 100%;
+  z-index: 1;
   background: color_variables.$background_color;
+  background-size: 320px;
+  background-repeat: space;
+  background-image: url("~@/assets/Sheepkai.net_moji.png");
+  background-attachment: fixed;
+  background-position: center;
 }
 
 div {
@@ -37,6 +44,7 @@ a {
 }
 #bg_img {
   height: 100%;
+  background: color_variables.$background_color;
   background-size: 320px;
   background-repeat: space;
   background-image: url("~@/assets/Sheepkai.net_moji.png");
