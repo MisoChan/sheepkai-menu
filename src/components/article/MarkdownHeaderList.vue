@@ -53,7 +53,6 @@ export default {
         };
         return result;
       });
-      console.log(h2array);
       return h2array;
     },
   },

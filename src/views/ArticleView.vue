@@ -35,6 +35,7 @@
 
 <script>
 import ArticleTextView from "@/components/article/ArticleTextView.vue";
+import { ArticleRequest } from "@/script/ArticleRequest";
 export default {
   components: {
     ArticleTextView,
@@ -44,15 +45,11 @@ export default {
       article_property: {},
     };
   },
-  created: function () {
-    const searchParams = new URLSearchParams(window.location.search);
-    let functionCode = searchParams.get("function_cd");
-    let articleURL = searchParams.get("article_url");
-    this.$http
-      .get("/getArticle", {
-        params: { function_cd: functionCode, article_url: articleURL },
-      })
-      .then((response) => (this.article_property = response.data));
+  created: async function () {
+    const request = new ArticleRequest(window.location.search);
+    request.judgeArticleRequestType();
+    // 記事一覧を取得する
+    this.article_property = await request.getArticleAsync();
   },
   computed: {},
 };
