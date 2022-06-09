@@ -7,10 +7,10 @@
           {{ article_property.article_subtitle }}
         </div>
       </div>
-      <div id="article_top_information">
+      <div class="article_top_information">
         <div>
-          <div id="article_author">著者:ナノ式</div>
-          <div id="article_reflesh_date">
+          <div class="article_top_author">著者:ナノ式</div>
+          <div class="article_reflesh_date">
             最終更新: {{ article_property.upload_date }}
           </div>
         </div>
@@ -22,6 +22,7 @@
         <hr />
       </div>
     </div>
+    <div id="article_information_margin"></div>
     <div id="article_view">
       <div id="article_body">
         <MarkdownView
@@ -29,10 +30,12 @@
           :isSanitized="article_property.is_sanitized"
         ></MarkdownView>
       </div>
-      <div id="article_side_menu">
-        <MarkdownHeaderList
-          :markdownText="article_property.article_md_text"
-        ></MarkdownHeaderList>
+      <div id="article_side_menu_wrapper">
+        <div id="article_side_menu">
+          <MarkdownHeaderList
+            :markdownText="article_property.article_md_text"
+          ></MarkdownHeaderList>
+        </div>
       </div>
     </div>
   </div>
