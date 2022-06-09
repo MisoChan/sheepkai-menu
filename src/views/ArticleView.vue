@@ -24,19 +24,9 @@
     </div>
     <div id="article_information_margin"></div>
     <div id="article_view">
-      <div id="article_body">
-        <MarkdownView
-          :markdownText="article_property.article_md_text"
-          :isSanitized="article_property.is_sanitized"
-        ></MarkdownView>
-      </div>
-      <div id="article_side_menu_wrapper">
-        <div id="article_side_menu">
-          <MarkdownHeaderList
-            :markdownText="article_property.article_md_text"
-          ></MarkdownHeaderList>
-        </div>
-      </div>
+      <ArticleTextView
+        :articleInformation="this.article_property"
+      ></ArticleTextView>
     </div>
   </div>
 </template>
@@ -44,25 +34,26 @@
 <style lang="scss" scoped src="@/assets/sass/article/article.scss"></style>
 
 <script>
-import MarkdownView from "@/components/article/MarkdownViewer.vue";
-import MarkdownHeaderList from "@/components/article/MarkdownHeaderList.vue";
+import ArticleTextView from "@/components/article/ArticleTextView.vue";
 export default {
+  components: {
+    ArticleTextView,
+  },
   data: function () {
     return {
       article_property: {},
     };
   },
   created: function () {
+    const searchParams = new URLSearchParams(window.location.search);
+    let functionCode = searchParams.get("function_cd");
+    let articleURL = searchParams.get("article_url");
     this.$http
       .get("/getArticle", {
-        params: { function_cd: "ABOUT_US", article_url: "aboutpage" },
+        params: { function_cd: functionCode, article_url: articleURL },
       })
       .then((response) => (this.article_property = response.data));
   },
   computed: {},
-  components: {
-    MarkdownView,
-    MarkdownHeaderList,
-  },
 };
 </script>

@@ -1,11 +1,15 @@
 @use "../mixin.scss" as mixin;
 @include mixin.media(tab) {
-    #contents_viewer {
-        margin: 0px 0 0 0;
-    }
+  #contents_viewer {
+    margin: 0px 0 0 0;
+  }
 }
 @include mixin.media(pc) {
-    #contents_viewer {
-        margin: 5px 0 0 0;
-    }
+  #contents_viewer {
+    margin: 5px 0 0 0;
+  }
+}
+
+#contents_viewer {
+  min-height: 95%;
 }

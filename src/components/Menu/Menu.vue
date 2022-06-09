@@ -50,7 +50,7 @@ export default {
         {
           imagesrc: "/icons/Radio_Tekina_Something.png",
           contents_title: "About Us",
-          link: "about",
+          link: "article?function_cd=ABOUT_US&article_url=aboutpage",
         },
         {
           imagesrc: "/icons/Eating_boxchan.png",
