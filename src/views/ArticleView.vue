@@ -23,10 +23,13 @@
       </div>
     </div>
     <div id="article_information_margin"></div>
-    <div id="article_view">
+    <div id="article_view" v-if="is_articlepage">
       <ArticleTextView
         :articleInformation="this.article_property"
       ></ArticleTextView>
+    </div>
+    <div id="article_list_view" v-else>
+      <ArticleListView></ArticleListView>
     </div>
   </div>
 </template>
@@ -35,22 +38,27 @@
 
 <script>
 import ArticleTextView from "@/components/article/ArticleTextView.vue";
+import ArticleListView from "@/components/article/ArticleListView.vue";
 import { ArticleRequest } from "@/script/ArticleRequest";
 export default {
   components: {
     ArticleTextView,
+    ArticleListView,
   },
   data: function () {
     return {
       article_property: {},
+      is_articlepage: "false",
     };
   },
   created: async function () {
     const request = new ArticleRequest(window.location.search);
-    request.judgeArticleRequestType();
-    // 記事一覧を取得する
-    this.article_property = await request.getArticleAsync();
+    // 記事ページかどうかを判定
+    this.is_articlepage = request.judgeArticleRequestType() === "ARTICLE_DATA";
+    // TRUE：記事ページ、FALSE：記事一覧取得ルーチン実行
+    this.article_property = (await this.is_articlepage)
+      ? await request.getArticleAsync()
+      : await request.getArticleListAsync();
   },
-  computed: {},
 };
 </script>

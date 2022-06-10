@@ -19,8 +19,8 @@
   src="@/assets/sass/article/article_text_view.scss"
 ></style>
 <script>
-import MarkdownView from "@/components/article/MarkdownViewer.vue";
-import MarkdownHeaderList from "@/components/article/MarkdownHeaderList.vue";
+import MarkdownView from "@/components/article/Markdown/MarkdownViewer.vue";
+import MarkdownHeaderList from "@/components/article/Markdown/MarkdownHeaderList.vue";
 export default {
   components: {
     MarkdownView,

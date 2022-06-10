@@ -1,0 +1,9 @@
+@use "../commons/color_variables.scss" as color_variables;
+@use "../mixin.scss" as mixin;
+
+@include mixin.media(sp) {
+}
+@include mixin.media(tab) {
+}
+@include mixin.media(pc) {
+}

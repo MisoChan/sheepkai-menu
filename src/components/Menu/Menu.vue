@@ -40,7 +40,7 @@ export default {
         {
           imagesrc: "/icons/Bin_Bon_Run.png",
           contents_title: "それシス",
-          link: "article",
+          link: "article?function_cd=SORESYS&page_no=1",
         },
         {
           imagesrc: "/icons/tool_modoki.png",

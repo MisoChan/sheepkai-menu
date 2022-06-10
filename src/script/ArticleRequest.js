@@ -65,9 +65,9 @@ export class ArticleRequest {
   //記事リストの取得を行う
   async getArticleListAsync() {
     const parameter = this.getArticleListRequestParameter();
-    let resultData = await axiosApp
-      .get("/getArticleList", parameter)
-      .then((response) => response.data);
+    let resultData = await axiosApp.get("/getArticleList", {
+      params: parameter,
+    });
     return resultData.data;
   }
 }
