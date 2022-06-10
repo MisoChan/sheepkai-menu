@@ -6,9 +6,9 @@
         v-for="article in articleData"
         :key="article.article_url"
       >
-        <a :href="article.full_article_url">
+        <router-link :to="article.full_article_url">
           <ArticleListContents :contents="article"></ArticleListContents>
-        </a>
+        </router-link>
       </div>
     </div>
   </div>
@@ -27,13 +27,12 @@ export default {
       const array = this.articleInformation.article_list?.map((content) => {
         let new_content = content;
         new_content["full_article_url"] =
-          "article?function_cd=" +
+          "/article?function_cd=" +
           content.function_cd +
           "&article_url=" +
           content.article_url;
         return new_content;
       });
-      console.log(array);
       return array;
     },
   },

@@ -53,14 +53,27 @@ export default {
       is_articlepage: "false",
     };
   },
+  watch: {
+    // 記事コンポーネント同士のRouter Push時に、再ロードさせる
+    $route() {
+      this.onLoad();
+    },
+  },
+  methods: {
+    // 記事ページのロード処理
+    async onLoad() {
+      const request = new ArticleRequest(window.location.search);
+      // 記事ページかどうかを判定
+      this.is_articlepage =
+        request.judgeArticleRequestType() === "ARTICLE_DATA";
+      // TRUE：記事ページ、FALSE：記事一覧取得ルーチン実行
+      this.article_property = (await this.is_articlepage)
+        ? await request.getArticleAsync()
+        : await request.getArticleListAsync();
+    },
+  },
   created: async function () {
-    const request = new ArticleRequest(window.location.search);
-    // 記事ページかどうかを判定
-    this.is_articlepage = request.judgeArticleRequestType() === "ARTICLE_DATA";
-    // TRUE：記事ページ、FALSE：記事一覧取得ルーチン実行
-    this.article_property = (await this.is_articlepage)
-      ? await request.getArticleAsync()
-      : await request.getArticleListAsync();
+    await this.onLoad();
   },
 };
 </script>
