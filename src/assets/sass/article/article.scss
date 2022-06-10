@@ -63,7 +63,7 @@
 }
 @include mixin.media(pc) {
   #article_view_wrapper {
-    width: 87%;
+    width: 1200px;
     grid-template-columns: 280px 1fr;
     grid-template-rows: 150px 135px 1fr;
   }
@@ -87,10 +87,16 @@
     grid-column: 1/2;
   }
   #article_information_margin {
+    display: block;
     grid-row: 3/4;
     grid-column: 1/2;
     background-color: color_variables.$article_header_border;
     height: 100%;
+  }
+}
+@include mixin.media(widepc) {
+  #article_view_wrapper {
+    width: 1500px;
   }
 }
 #article_view_wrapper {
