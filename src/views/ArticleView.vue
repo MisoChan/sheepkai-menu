@@ -29,7 +29,9 @@
       ></ArticleTextView>
     </div>
     <div id="article_list_view" v-else>
-      <ArticleListView></ArticleListView>
+      <ArticleListView
+        :articleInformation="this.article_property"
+      ></ArticleListView>
     </div>
   </div>
 </template>
