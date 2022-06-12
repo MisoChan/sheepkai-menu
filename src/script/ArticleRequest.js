@@ -26,7 +26,7 @@ export class ArticleRequest {
       (Array.from(this.searchURLParameter).length ===
         this.REQUEST_PARAMETERS_MAX)
     ) {
-      throw new TypeError();
+      return "UNKNOWN";
     }
     // ページ番号のパラメータがURLにあるならARTICLE_LIST_DATA、そうでないなら記事単体取得としてARTICLE_DATAを返す
     return this.searchURLParameter.has(this.REQUEST_PARAMETERS.PAGE_NO)

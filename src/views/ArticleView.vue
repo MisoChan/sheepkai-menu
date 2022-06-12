@@ -63,6 +63,10 @@ export default {
     // 記事ページのロード処理
     async onLoad() {
       const request = new ArticleRequest(window.location.search);
+      // 早期リターン：UNKNOWNだった場合は即Returnして処理を終了する
+      if (request.judgeArticleRequestType() === "UNKNOWN") {
+        return null;
+      }
       // 記事ページかどうかを判定
       this.is_articlepage =
         request.judgeArticleRequestType() === "ARTICLE_DATA";
