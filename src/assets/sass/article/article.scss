@@ -34,7 +34,7 @@
 }
 @include mixin.media(tab) {
   #article_view_wrapper {
-    width: 800px;
+    max-width: 800px;
     grid-template-columns: 4fr 1fr;
     grid-template-rows: 150px 35px 1fr;
   }
@@ -129,6 +129,7 @@
   color: color_variables.$base_textcolor;
   padding: 1em;
 }
+
 
 #article_border {
   padding: 0px 1em 0px 1em;

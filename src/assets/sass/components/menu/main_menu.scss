@@ -35,6 +35,11 @@
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);
   }
+  #menu_copyrights {
+    position: absolute;
+    top: 93%;
+    left: 5%;
+  }
 }
 @include mixin.media(pc) {
   #main_menu {

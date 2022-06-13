@@ -2,8 +2,23 @@
 @use "../mixin.scss" as mixin;
 
 @include mixin.media(sp) {
+  #list_view_wrapper {
+    grid-column: 1/3;
+  }
+  #list_view_wrapper {
+    padding: 0px;
+  }
 }
 @include mixin.media(tab) {
+  #list_view_wrapper {
+    grid-column: 1/3;
+  }
+  #list_view_wrapper {
+    padding: 5px;
+  }
 }
 @include mixin.media(pc) {
+  #list_view_wrapper {
+    padding: 20px;
+  }
 }

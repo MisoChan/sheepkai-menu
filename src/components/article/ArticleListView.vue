@@ -13,6 +13,7 @@
     </div>
   </div>
 </template>
+<style lang="scss" scoped src="@/assets/sass/article/article_list.scss"></style>
 <script>
 import ArticleListContents from "@/components/article/ListContents/ArticleListContents.vue";
 export default {
