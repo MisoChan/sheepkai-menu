@@ -1,4 +1,5 @@
 import { axiosApp } from "@/script/settings/AxiosSettings.js";
+let controller = new AbortController();
 export class ArticleRequest {
   constructor(url) {
     // パラメタURL
@@ -14,6 +15,8 @@ export class ArticleRequest {
     this.REQUEST_PARAMETERS_MAX = 3;
 
     this.urlRequestType = this.judgeArticleRequestType();
+
+    this.axios = axiosApp;
   }
 
   // 記事リストか記事単体取得か、それ以外かを判定する
@@ -59,15 +62,23 @@ export class ArticleRequest {
   async getArticleAsync() {
     const parameter = this.getArticleRequestParameter();
     //記事取得リクエスト発出
-    let resultData = await axiosApp.get("/getArticle", { params: parameter });
+    let resultData = await this.axios.get("/getArticle", {
+      params: parameter,
+      signal: controller.signal,
+    });
     return resultData.data;
   }
   //記事リストの取得を行う
   async getArticleListAsync() {
     const parameter = this.getArticleListRequestParameter();
-    let resultData = await axiosApp.get("/getArticleList", {
+    let resultData = await this.axios.get("/getArticleList", {
       params: parameter,
+      signal: controller.signal,
     });
     return resultData.data;
+  }
+  cancelRequest() {
+    controller.abort();
+    controller = new AbortController();
   }
 }

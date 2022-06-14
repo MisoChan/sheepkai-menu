@@ -23,16 +23,20 @@
       </div>
     </div>
     <div id="article_information_margin"></div>
+    <!-- V-IF ↓記事を表示する場合↓ -->
     <div id="article_view" v-if="is_articlepage">
       <ArticleTextView
+        v-if="is_articlepage"
         :articleInformation="this.article_property"
       ></ArticleTextView>
     </div>
-    <div id="article_list_view" v-else>
-      <ArticleListView
-        :articleInformation="this.article_property"
-      ></ArticleListView>
-    </div>
+    <!-- IF END ↑記事を表示する場合↑ -->
+    <!-- V-IF ELSE ↓記事リストを表示する場合↓ -->
+    <ArticleListView
+      v-else
+      :articleInformation="this.article_property"
+    ></ArticleListView>
+    <!-- ELSE END ↑記事リストを表示する場合↑ -->
   </div>
 </template>
 

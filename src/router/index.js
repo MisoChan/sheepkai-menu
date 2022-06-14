@@ -3,7 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import ContentView from "../views/ContentView.vue";
 import ArticleView from "../views/ArticleView.vue";
 import PageNotFound from "../views/errorpage/ErrorPageView.vue";
-
+import { ArticleRequest } from "../script/ArticleRequest.js";
 const routes = [
   {
     path: "/",
@@ -42,5 +42,8 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
 });
-
+router.beforeEach((to, from, next) => {
+  new ArticleRequest(to.fullPath).cancelRequest();
+  next();
+});
 export default router;
