@@ -45,7 +45,7 @@ export default {
         {
           imagesrc: "/icons/tool_modoki.png",
           contents_title: "Tools",
-          link: "article",
+          link: "article?function_cd=OTHER&article_url=developping",
         },
         {
           imagesrc: "/icons/Radio_Tekina_Something.png",

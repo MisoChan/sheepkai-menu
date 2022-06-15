@@ -3,11 +3,17 @@
 
 .markdown_viewer {
   padding: 0px 1em 0px 1em;
-  > ::v-deep * {
+  > :deep * {
     padding: 0px 0em 0px 0.5em;
   }
-  > ::v-deep h2 {
+  > :deep h2 {
     padding: 0px 0em 0px 0em;
     border-bottom: 1px solid color_variables.$md_header_border;
+  }
+  > :deep p img {
+    display: block;
+    max-width: 840px;
+    width: 100%;
+    margin: 0 auto;
   }
 }
