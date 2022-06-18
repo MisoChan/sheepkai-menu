@@ -9,7 +9,7 @@
 ></style>
 
 <script>
-import { marked } from "marked";
+import { MarkDownUtility } from "@/script/MarkdownUtility.js";
 export default {
   props: {
     markdownText: {
@@ -26,10 +26,13 @@ export default {
   computed: {
     markdownData() {
       const mdtext = this.markdownText ?? "# Now loading...";
-      const converted_md = marked(mdtext);
-      if (this.isSanitized) {
-        return this.$sanitize(converted_md);
-      }
+      const mdutil = new MarkDownUtility();
+      const converted_md = mdutil.convertImageSrc(
+        mdtext,
+        this.isSanitized,
+        process.env.VUE_APP_API_URL
+      );
+      console.log(converted_md);
       return converted_md;
     },
   },

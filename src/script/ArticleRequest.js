@@ -62,7 +62,7 @@ export class ArticleRequest {
   async getArticleAsync() {
     const parameter = this.getArticleRequestParameter();
     //記事取得リクエスト発出
-    let resultData = await this.axios.get("/getArticle", {
+    let resultData = await this.axios.get("/article/getArticle", {
       params: parameter,
       signal: controller.signal,
     });
@@ -71,7 +71,7 @@ export class ArticleRequest {
   //記事リストの取得を行う
   async getArticleListAsync() {
     const parameter = this.getArticleListRequestParameter();
-    let resultData = await this.axios.get("/getArticleList", {
+    let resultData = await this.axios.get("/article/getArticleList", {
       params: parameter,
       signal: controller.signal,
     });
