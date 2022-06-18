@@ -74,10 +74,13 @@ export default {
       // 記事ページかどうかを判定
       this.is_articlepage =
         request.judgeArticleRequestType() === "ARTICLE_DATA";
+
       // TRUE：記事ページ、FALSE：記事一覧取得ルーチン実行
-      this.article_property = (await this.is_articlepage)
-        ? await request.getArticleAsync()
-        : await request.getArticleListAsync();
+      if (await this.is_articlepage) {
+        this.article_property = await request.getArticleAsync();
+      } else {
+        this.article_property = await request.getArticleListAsync();
+      }
     },
   },
   created: async function () {
