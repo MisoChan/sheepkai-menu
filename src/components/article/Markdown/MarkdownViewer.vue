@@ -1,5 +1,5 @@
 <template>
-  <div class="markdown_viewer" v-html="markdownData"></div>
+  <div ref="markdown_text" class="markdown_viewer"></div>
 </template>
 
 <style
@@ -23,18 +23,29 @@ export default {
       default: true,
     },
   },
-  computed: {
+  methods: {
+    // MDデータ取得解析
     markdownData() {
       const mdtext = this.markdownText ?? "# Now loading...";
       const mdutil = new MarkDownUtility();
       const converted_md = mdutil.convertImageSrc(
-        mdtext,
-        this.isSanitized,
+        mdutil.getParsedBodyDOM(mdtext, this.isSanitized),
         process.env.VUE_APP_API_URL
       );
-      console.log(converted_md);
       return converted_md;
     },
+    jumpToHeader(id) {
+      this.$refs.markdown_text.querySelector("#" + id).scrollIntoView(true);
+    },
   },
+  watch: {
+    markdownText() {
+      const articleData = this.markdownData().childNodes;
+      Array.from(articleData).map((element) => {
+        this.$refs.markdown_text.appendChild(element);
+      });
+    },
+  },
+  computed: {},
 };
 </script>
