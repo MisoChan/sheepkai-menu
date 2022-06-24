@@ -118,8 +118,6 @@
   display: grid;
 }
 .article_top_information {
-  display: flex;
-  align-items: flex-end;
   font-size: 12px;
 }
 #article_view {
@@ -129,7 +127,6 @@
   color: color_variables.$base_textcolor;
   padding: 1em;
 }
-
 
 #article_border {
   padding: 0px 1em 0px 1em;

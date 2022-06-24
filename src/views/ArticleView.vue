@@ -8,11 +8,9 @@
         </div>
       </div>
       <div class="article_top_information">
-        <div>
-          <div class="article_top_author">著者:ナノ式</div>
-          <div class="article_reflesh_date">
-            最終更新: {{ article_property.upload_date }}
-          </div>
+        <div class="article_top_author">著者:ナノ式</div>
+        <div class="article_reflesh_date">
+          最終更新: {{ article_property.upload_date }}
         </div>
       </div>
     </div>
@@ -23,6 +21,7 @@
       </div>
     </div>
     <div id="article_information_margin"></div>
+
     <!-- V-IF ↓記事を表示する場合↓ -->
     <div id="article_view" v-if="is_articlepage">
       <ArticleTextView
@@ -80,6 +79,7 @@ export default {
         this.article_property = await request.getArticleAsync();
       } else {
         this.article_property = await request.getArticleListAsync();
+        this.$route.meta.title = this.article_property.article_title;
       }
     },
   },

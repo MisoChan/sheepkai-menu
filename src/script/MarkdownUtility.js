@@ -1,6 +1,6 @@
 import { marked } from "marked";
 import sanitizer from "sanitize-html";
-import sanitizeOption from "@/script/settings/SanitizeOptions.json";
+import sanitizeOption from "@/json/SanitizeOptions.json";
 export class MarkDownUtility {
   // HTML変換を行う
   convertToHTML(mdtext, isSanitize) {

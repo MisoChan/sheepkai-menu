@@ -4,7 +4,11 @@
     v-for="header in markdownHeaderData"
     :key="header.id"
   >
-    <a class="md_header_text" @click="contentClick(header)">
+    <a
+      class="md_header_text"
+      href="#"
+      @click.prevent.stop="contentClick(header)"
+    >
       {{ header.title }}
     </a>
     <div
@@ -24,6 +28,7 @@
 <script>
 import { MarkDownUtility } from "@/script/MarkdownUtility.js";
 export default {
+  emits: ["content-click"],
   data: function () {
     return {
       h2IdNumber: 0,

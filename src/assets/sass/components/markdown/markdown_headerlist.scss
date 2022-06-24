@@ -1,12 +1,16 @@
 @use "../../commons/color_variables.scss" as color_variables;
 @use "../../mixin.scss" as mixin;
 
-.header_title > p {
-    overflow-wrap: break-word;
+.header_title {
+  overflow-wrap: break-word;
+  margin: 10px 0px 10px 0;
 }
-.md_header_text .nomal{
+
+.md_header_text {
   overflow-wrap: normal;
+  text-decoration: underline;
+  margin: 10px 0px 10px 0;
 }
 .md_header_text.break {
-    overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
