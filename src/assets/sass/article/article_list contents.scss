@@ -31,7 +31,7 @@
   margin: 20px 10px 10px 10px;
   background-color: color_variables.$article_body_background_color;
   display: grid;
-  grid-template-columns: 35px 4fr 1fr;
+  grid-template-columns: 15px 4fr 1fr;
   grid-template-rows: 5fr 1fr;
   &:active {
     box-shadow: none;
@@ -39,16 +39,17 @@
   }
 }
 .article_title {
-  margin: 0.2em 0 0 0;
+  margin: 0.4em 0 0 20px;
   grid-column: 2/2;
 }
 .upload_date {
+  margin: 0 0 0 20px;
   grid-column: 2/2;
   grid-row: 2/2;
 }
 .article_list_content_belt {
   grid-column: 1/1;
   grid-row: 1/3;
-  margin: 0 10px 0 0;
-  background-color: color_variables.$article_list_head_border;
+  margin: 0 5px 0 0;
+  background-color: color_variables.$accent_color_yerrow;
 }

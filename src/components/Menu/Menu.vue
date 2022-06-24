@@ -35,7 +35,7 @@ export default {
         {
           imagesrc: "/icons/TV.png",
           contents_title: "What's New?",
-          link: "article",
+          link: "article?function_cd=WHATS_NEW",
         },
         {
           imagesrc: "/icons/Bin_Bon_Run.png",
@@ -50,7 +50,7 @@ export default {
         {
           imagesrc: "/icons/Radio_Tekina_Something.png",
           contents_title: "About Us",
-          link: "article?function_cd=ABOUT_US&article_url=aboutpage",
+          link: "article?function_cd=ABOUT_US",
         },
         {
           imagesrc: "/icons/Eating_boxchan.png",

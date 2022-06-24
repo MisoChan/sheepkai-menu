@@ -12,5 +12,8 @@ export default {
   components: {
     MainMenu,
   },
+  mounted: function () {
+    this.$store.commit("setPageTitle", "Menu");
+  },
 };
 </script>

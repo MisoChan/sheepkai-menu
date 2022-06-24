@@ -66,6 +66,7 @@ export default {
     // 記事ページのロード処理
     async onLoad() {
       const request = new ArticleRequest(window.location.search);
+      this.$store.commit("setPageTitle", this.article_property.article_title);
       // 早期リターン：UNKNOWNだった場合は即Returnして処理を終了する
       if (request.judgeArticleRequestType() === "UNKNOWN") {
         return null;
@@ -77,11 +78,10 @@ export default {
       // TRUE：記事ページ、FALSE：記事一覧取得ルーチン実行
       if (await this.is_articlepage) {
         this.article_property = await request.getArticleAsync();
-        this.$store.commit("setPageTitle", this.article_property.article_title);
       } else {
         this.article_property = await request.getArticleListAsync();
-        this.$store.commit("setPageTitle", this.article_property.article_title);
       }
+      this.$store.commit("setPageTitle", this.article_property.article_title);
     },
   },
   created: async function () {
