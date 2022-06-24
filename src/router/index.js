@@ -9,7 +9,6 @@ const routes = [
     path: "/",
     name: "home",
     component: HomeView,
-    meta: { title: "Menu" },
   },
   {
     path: "/:catchAll(.*)",
@@ -25,7 +24,6 @@ const routes = [
         path: "/article",
         name: "article",
         component: ArticleView,
-        meta: { title: "" },
       },
       {
         path: "/about",

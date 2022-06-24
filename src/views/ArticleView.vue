@@ -77,9 +77,10 @@ export default {
       // TRUE：記事ページ、FALSE：記事一覧取得ルーチン実行
       if (await this.is_articlepage) {
         this.article_property = await request.getArticleAsync();
+        this.$store.commit("setPageTitle", this.article_property.article_title);
       } else {
         this.article_property = await request.getArticleListAsync();
-        this.$route.meta.title = this.article_property.article_title;
+        this.$store.commit("setPageTitle", this.article_property.article_title);
       }
     },
   },
