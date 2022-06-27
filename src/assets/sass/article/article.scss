@@ -1,10 +1,12 @@
 @use "../commons/color_variables.scss" as color_variables;
 @use "../mixin.scss" as mixin;
+
+$buttom_image_size: 64px;
 @include mixin.media(sp) {
   #article_view_wrapper {
     width: 97%;
     grid-template-columns: 4fr 1fr;
-    grid-template-rows: 150px 35px 1fr;
+    grid-template-rows: 150px 95px 1fr;
   }
   #article_view {
     grid-row: 1/4;
@@ -36,7 +38,7 @@
   #article_view_wrapper {
     max-width: 800px;
     grid-template-columns: 4fr 1fr;
-    grid-template-rows: 150px 35px 1fr;
+    grid-template-rows: 150px 95px 1fr;
   }
   #article_view {
     grid-row: 1/4;
@@ -134,17 +136,37 @@
 }
 #article_border_links {
   height: 100%;
+  display: grid;
+  grid-template-columns: repeat(1fr, 5);
+  grid-template-rows: 9fr 1fr;
   > hr {
+    grid-column: 1/6;
+    grid-row: 2/2;
     height: 1px;
     width: 100%;
     margin: 4px 0 0px 0;
   }
   > .border_link {
-    height: 75%;
+    grid-row: 1/1;
+    height: 100%;
     display: flex;
     align-items: flex-end;
+    text-align: center;
+    margin: 0 auto;
+
     > a {
       color: color_variables.$white_textcolor;
     }
   }
+}
+
+.border_button_img {
+  max-width: $buttom_image_size;
+}
+
+.chotto_small {
+  height: calc($buttom_image_size * 0.75);
+}
+.border_last{
+  grid-column: 5/5;
 }

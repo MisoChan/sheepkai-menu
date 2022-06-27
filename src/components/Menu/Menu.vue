@@ -29,32 +29,38 @@ export default {
   props: {
     msg: String,
   },
+  methods: {
+    getFunctionName(key) {
+      this.$language = "EN";
+      return this.$translate("FunctionProperty", key)["name"];
+    },
+  },
   data: function () {
     return {
       menu_contents: [
         {
           imagesrc: "/icons/TV.png",
-          contents_title: "What's New?",
+          contents_title: this.getFunctionName("WHATS_NEW"),
           link: "article?function_cd=WHATS_NEW",
         },
         {
           imagesrc: "/icons/Bin_Bon_Run.png",
-          contents_title: "それシス",
+          contents_title: this.getFunctionName("SORESYS"),
           link: "article?function_cd=SORESYS&page_no=1",
         },
         {
           imagesrc: "/icons/tool_modoki.png",
-          contents_title: "Tools",
+          contents_title: this.getFunctionName("TOOLS"),
           link: "article?function_cd=OTHER&article_url=developping",
         },
         {
           imagesrc: "/icons/Radio_Tekina_Something.png",
-          contents_title: "About Us",
+          contents_title: this.getFunctionName("ABOUT_US"),
           link: "article?function_cd=ABOUT_US",
         },
         {
           imagesrc: "/icons/Eating_boxchan.png",
-          contents_title: "Contact",
+          contents_title: this.getFunctionName("CONTACT"),
           link: "contact",
         },
       ],

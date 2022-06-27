@@ -1,0 +1,56 @@
+{
+    "JP":{
+        "Common": {
+            "sitename": "羊飼いさんとお道具箱の部屋"
+        },
+        "FunctionProperty": {
+           "WHATS_NEW":{
+               "name": "What's New?",
+                "description": "更新情報"
+           },
+           "SORESYS":{
+               "name": "それシス",
+                "description": "それとなくシステムな毎日"
+           },
+           "TOOLS":{
+               "name": "Tools",
+                "description": "便利な道具たち"
+           },
+           "ABOUT_US":{
+               "name": "About us",
+                "description": "このサイトについて"
+           },
+           "CONTACT":{
+               "name": "Contact",
+                "description": "連絡先など"
+           }
+        }
+    },
+    "EN":{
+        "Common": {
+            "sitename": "Sheepkai and toolboxes Room"
+        },
+        "FunctionProperty": {
+           "WhatsNew":{
+               "name": "What's New?",
+                "description": "Updates"
+           },
+           "SoreSys":{
+               "name": "Soretonaku System Na Everyday",
+                "description": "Blogs"
+           },
+           "Tools":{
+               "name": "Tools",
+                "description": "Tools"
+           },
+           "AboutUs":{
+               "name": "About us",
+                "description": "About This site"
+           },
+           "Contact":{
+               "name": "Contact",
+                "description": "Contact list"
+           }
+        }
+    }
+}

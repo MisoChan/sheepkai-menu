@@ -9,14 +9,30 @@
       </div>
       <div class="article_top_information">
         <div class="article_top_author">著者:ナノ式</div>
-        <div class="article_reflesh_date">
+        <div class="article_reflesh_date" v-if="is_articlepage">
           最終更新: {{ article_property.upload_date }}
         </div>
       </div>
     </div>
     <div id="article_border">
       <div id="article_border_links">
-        <div class="border_link"><router-link to="/">HOME</router-link></div>
+        <div class="border_link">
+          <router-link to="/">
+            <img src="pictures/KinokoHouse.png" class="border_button_img" />
+            <div>HOME</div>
+          </router-link>
+        </div>
+
+        <div class="border_link border_last">
+          <a href="#" @click.prevent.stop="$router.go(-1)">
+            <img
+              src="pictures/Planaria_Back_senpai.png"
+              class="border_button_img chotto_small"
+            />
+            <div>BACK</div>
+          </a>
+        </div>
+
         <hr />
       </div>
     </div>
@@ -80,6 +96,16 @@ export default {
         this.article_property = await request.getArticleAsync();
       } else {
         this.article_property = await request.getArticleListAsync();
+
+        // リストタイトルと説明をセット
+        this.article_property.article_title = this.$translate(
+          "FunctionProperty",
+          request.getArticleRequestParameter()["function_cd"]
+        )["name"];
+        this.article_property.article_subtitle = this.$translate(
+          "FunctionProperty",
+          request.getArticleRequestParameter()["function_cd"]
+        )["description"];
       }
       this.$store.commit("setPageTitle", this.article_property.article_title);
     },
