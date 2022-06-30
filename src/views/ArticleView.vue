@@ -7,9 +7,9 @@
           {{ article_property.article_subtitle }}
         </div>
       </div>
-      <div class="article_top_information">
+      <div class="article_top_information" v-if="is_articlepage">
         <div class="article_top_author">著者:ナノ式</div>
-        <div class="article_reflesh_date" v-if="is_articlepage">
+        <div class="article_reflesh_date">
           最終更新: {{ article_property.upload_date }}
         </div>
       </div>
