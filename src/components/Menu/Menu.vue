@@ -31,7 +31,6 @@ export default {
   },
   methods: {
     getFunctionName(key) {
-      this.$language = "EN";
       return this.$translate("FunctionProperty", key)["name"];
     },
   },

@@ -3,10 +3,14 @@ import { createStore } from "vuex";
 export default createStore({
   state: {
     pageTitle: "",
+    language: "JP",
   },
   getters: {
     getPageTitle(state) {
       return state.pageTitle;
+    },
+    getLanguage(state) {
+      return state.language;
     },
   },
   mutations: {

@@ -1,0 +1,50 @@
+{
+    "JP":{
+        "SUCCESS":{
+            "title": "送信完了！",
+            "description": "メッセージをありがとうございます。",
+            "icon": "Eating_boxchan.png"
+        },
+        "SUCCESS_TWISE":{
+            "title": "送信完了...",
+            "description": "二回も送ってくださるなんて、熱心なお方ですね。",
+            "icon": "Eating_boxchan_twise.png"
+        },
+        "ERROR_3RD_SENT":{
+            "title": "熱心なところ申し訳ありません。",
+            "description": "メッセージは一日2回まで送信可能です。24時間後にもう一度お試し下さい。",
+            "icon": "Eating_boxchan_error.png"
+        },
+        "ERROR_FAILED": {
+            "title": "登録に失敗しました。",
+            "description": "通信エラーが発生しました。数分時間をおいた上で、今一度お試しください。",
+            "icon": "Eating_boxchan.png"
+        },
+        "ERROR_RECAPTCHA_FAILED":{
+            "title": "reCAPTCHAエラーです。",
+            "description": "ページリロードの上、数分置いたあともう一度送信してみるか、人間さんに送信を変わってもらってください。",
+            "icon": "Eating_boxchan.png"
+        },
+        "ERROR_SINGLE_AAAAAA":{
+            "title": "あ。",
+            "description": "あああああああ、ああああ、’あ’ああああああああああ。\nあ。",
+            "icon": "Eating_boxchan.png"
+        },
+        "ERROR_SINGLE_STRING":{
+            "title": "あの…",
+            "description": "いろいろと試そうとしてますね？ デバッガーの素質ありです。\n でも、このサイトではご遠慮ください。",
+            "icon": "Eating_boxchan.png"
+        },
+        "ERROR_BLACK_COMPANY":{
+            "title": "ブラック企業からのアクセスを遮断しました。",
+            "description": "人格否定と成果の横取りを行うクズ人間とは関わりたくないため、アクセスが拒否されました。反省しろ。",
+            "icon": "Eating_boxchan.png"
+        },
+        "ERROR_NG_WORD":{
+            "title": "NGワードを検知しました",
+            "description": "NGワードが含まれています。表現を変えてもう一度おためしください。",
+            "icon": "Eating_boxchan.png"
+        }
+    }
+    
+}
