@@ -11,12 +11,11 @@ export default {
   methods: {
     createTitleDesc: function (routeInstance) {
       //titleを設定する
-      const setTitle =
-        this.$translate("FunctionProperty", routeInstance.meta.functionId)[
-          "name"
-        ] + " | sheepkai.net";
-
-      document.title = setTitle;
+      const setTitle = this.$translate(
+        "FunctionProperty",
+        routeInstance.meta.functionId
+      )["name"];
+      this.$store.commit("setPageTitle", setTitle);
     },
   },
   watch: {
