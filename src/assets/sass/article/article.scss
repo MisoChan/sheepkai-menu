@@ -4,7 +4,6 @@
 $buttom_image_size: 64px;
 @include mixin.media(sp) {
   #article_view_wrapper {
-    width: 97%;
     grid-template-columns: 4fr 1fr;
     grid-template-rows: 150px 95px 1fr;
   }
@@ -36,7 +35,6 @@ $buttom_image_size: 64px;
 }
 @include mixin.media(tab) {
   #article_view_wrapper {
-    max-width: 800px;
     grid-template-columns: 4fr 1fr;
     grid-template-rows: 150px 95px 1fr;
   }
@@ -66,12 +64,8 @@ $buttom_image_size: 64px;
 }
 @include mixin.media(pc) {
   #article_view_wrapper {
-    width: 1200px;
     grid-template-columns: 280px 1fr;
     grid-template-rows: 150px 135px 1fr;
-  }
-  #article_view_wrapper {
-    margin: 0 0 0 0;
   }
   .article_top_information {
     grid-row: 2/2;
@@ -97,17 +91,9 @@ $buttom_image_size: 64px;
     height: 100%;
   }
 }
-@include mixin.media(widepc) {
-  #article_view_wrapper {
-    width: 1500px;
-  }
-}
 #article_view_wrapper {
   min-height: 95vh;
   background-color: color_variables.$article_background_color;
-  left: 0;
-  right: 0;
-  margin: auto;
   display: grid;
 }
 #article_title {
@@ -167,6 +153,6 @@ $buttom_image_size: 64px;
 .chotto_small {
   height: calc($buttom_image_size * 0.75);
 }
-.border_last{
+.border_last {
   grid-column: 5/5;
 }

@@ -1,15 +1,27 @@
 @use "../mixin.scss" as mixin;
+@include mixin.media(sp) {
+  #contents_viewer {
+    width: 97%;
+  }
+}
 @include mixin.media(tab) {
   #contents_viewer {
-    margin: 0px 0 0 0;
+    max-width: 800px;
   }
 }
 @include mixin.media(pc) {
   #contents_viewer {
-    margin: 5px 0 0 0;
+    width: 1200px;
   }
 }
-
+@include mixin.media(widepc) {
+  #contents_viewer {
+    width: 1500px;
+  }
+}
 #contents_viewer {
   min-height: 95%;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
