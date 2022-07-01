@@ -4,6 +4,10 @@
             "sitename": "羊飼いさんとお道具箱の部屋"
         },
         "FunctionProperty": {
+            "MENU":{
+               "name": "Menu",
+                "description": "メインメニュー"
+           },
            "WHATS_NEW":{
                "name": "What's New?",
                 "description": "更新情報"
@@ -32,6 +36,10 @@
             "sitename": "Sheepkai and toolboxes Room"
         },
         "FunctionProperty": {
+            "MENU":{
+               "name": "Menu",
+                "description": "メインメニュー"
+           },
            "WhatsNew":{
                "name": "What's New?",
                 "description": "Updates"

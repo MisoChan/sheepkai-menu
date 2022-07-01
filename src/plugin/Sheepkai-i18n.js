@@ -4,7 +4,8 @@ const i18n = {
   install(Vue, options) {
     Vue.config.globalProperties.$language = "JP";
     Vue.config.globalProperties.$translate = function (group, key) {
-      return json[options.locale][group][key];
+      const result = json[options.locale][group][key];
+      return result ?? "";
     };
     Vue.provide("i18n", options);
   },
