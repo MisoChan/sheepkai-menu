@@ -15,8 +15,8 @@ export default createStore({
   },
   mutations: {
     setPageTitle(state, title) {
-      this.state.pageTitle = title;
-      document.title = title + " | sheepkai.net";
+      this.state.pageTitle = title ? title : "LOADING...";
+      document.title = this.state.pageTitle + " | sheepkai.net";
     },
   },
   actions: {},
