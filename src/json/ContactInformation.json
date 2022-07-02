@@ -1,0 +1,41 @@
+{
+    "NanoShiki": {
+        "name": "ナノ式",
+        "image": "https://pbs.twimg.com/profile_images/1542516065267159042/BEk92qmE_400x400.jpg",
+        "contactMedia": [
+            {
+                "type": "twitter",
+                "name": "@launchpersimmon",
+                "url": "https://twitter.com/launchpersimmon"
+            }, 
+            {
+                "type": "github",
+                "name": "MisoChan",
+                "url": "https://github.com/MisoChan"
+            }
+        ],
+        "role": ["sitedevel","ilust","design","admin"]
+    },
+    "Imobe":{
+        "name": "さつま芋辺",
+        "image": "https://pbs.twimg.com/profile_images/1510785179920793600/YFOKzRBg_400x400.jpg",
+        "contactMedia": [
+            {
+                "type": "twitter",
+                "name": "@imo_be",
+                "url": "https://twitter.com/imo_be"
+            },
+            {
+                "type": "skeb",
+                "name": "Skeb",
+                "url": "http://skeb.jp/@imo_be"
+            },
+            {
+                "type": "pixiv",
+                "name": "Pixiv",
+                "url": "https://www.pixiv.net/users/16049270"
+            }
+        ],
+        "role": ["design_adviser"]
+    }
+}

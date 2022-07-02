@@ -1,8 +1,6 @@
 <template>
-  <div id="bg_img">
-    <div id="main">
-      <MainMenu></MainMenu>
-    </div>
+  <div id="main">
+    <MainMenu></MainMenu>
   </div>
 </template>
 

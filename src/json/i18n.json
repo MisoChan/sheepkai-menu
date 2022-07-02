@@ -28,6 +28,14 @@
                "name": "Contact",
                 "description": "連絡先など"
            }
+        },
+        "Contacts":{
+            "email": "返信用Email(任意)",
+            "company_name": "法人名（法人の方はご記入ください）",
+            "title": "件名",
+            "message": "本文",
+            "clear": "クリア",
+            "submit": "送信"
         }
         
     },
@@ -38,7 +46,7 @@
         "FunctionProperty": {
             "MENU":{
                "name": "Menu",
-                "description": "メインメニュー"
+                "description": "Top menu"
            },
            "WhatsNew":{
                "name": "What's New?",
@@ -54,12 +62,21 @@
            },
            "AboutUs":{
                "name": "About us",
-                "description": "About This site"
+                "description": "About this site"
            },
            "Contact":{
                "name": "Contact",
                 "description": "Contact list"
            }
+        },
+        "Contacts":{
+            "email": "返信用Email(任意)",
+            "company_name": "法人名（法人の方はご記入ください）",
+            "title": "件名",
+            "message": "本文",
+            "clear": "クリア",
+            "submit": "送信"
         }
+        
     }
 }

@@ -1,0 +1,8 @@
+@use "../commons/color_variables.scss" as color_variables;
+@use "../mixin.scss" as mixin;
+
+#contact_view_wrapper {
+  margin: 10px 0 0 0;
+  min-height: 90vh;
+  background-color: color_variables.$article_background_color;
+}
