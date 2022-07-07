@@ -17,6 +17,7 @@ input[type="button"] {
 
 html {
   min-height: 100vh;
+  min-width: 365px;
   z-index: 1;
   background: color_variables.$background_color;
   background-size: 320px;

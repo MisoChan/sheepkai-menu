@@ -1,0 +1,19 @@
+@use "../../commons/color_variables.scss" as color_variables;
+@use "../../mixin.scss" as mixin;
+
+.contact_information {
+  text-align: left;
+}
+.contact_icon {
+  max-width: 250px;
+}
+
+.contact_name {
+  font-size: 32px;
+  font-style: normal;
+  height: 20px;
+}
+.media_link {
+  font-size: 15px;
+  margin: 0 0 10px 2em;
+}

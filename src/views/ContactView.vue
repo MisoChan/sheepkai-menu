@@ -1,6 +1,20 @@
 <template>
   <div id="contact_view">
     <div id="contact_view_wrapper">
+      <div id="contact_image_wrapper">
+        <img
+          src="@/assets/pictures/Contact.png"
+          class="contact_image pc_only"
+        />
+        <img
+          src="@/assets/pictures/Contact_Nanoshiki.png"
+          class="contact_image sp_only sp_left"
+        />
+        <img
+          src="@/assets/pictures/Contact_Imobe.png"
+          class="contact_image sp_only sp_right"
+        />
+      </div>
       <div id="contact_information_wrapper">
         <ContactInformation
           :mediaData="getInfoData('NanoShiki')"
@@ -8,14 +22,6 @@
         <ContactInformation
           :mediaData="getInfoData('Imobe')"
         ></ContactInformation>
-      </div>
-      <div id="contact_form_wrapper">
-        <form name="message" class="contact_form" onsubmit="return false;">
-          <input type="email" name="mail_address" />
-          <input type="text" name="message_title" />
-          <input type="text" name="message_text" />
-        </form>
-        <input type="button" :value="this.$translate('Contacts', 'submit')" />
       </div>
     </div>
   </div>
@@ -29,9 +35,7 @@ export default {
     ContactInformation,
   },
   data: function () {
-    return {
-      recaptchaToken: "",
-    };
+    return {};
   },
   methods: {
     sendRequest: () => {},
@@ -39,18 +43,7 @@ export default {
       return ContactInfoData[key];
     },
   },
-  mounted: function () {
-    // // eslint-disable-next-line no-undef
-    // grecaptcha.ready(() => {
-    //   // eslint-disable-next-line no-undef
-    //   grecaptcha
-    //     .execute(process.env.VUE_APP_RECAPTCHA_SITE_KEY_V3, {
-    //       action: "homepage",
-    //     })
-    //     .then((token) => {
-    //       this.recaptchaToken = token;
-    //     });
-    // });
-  },
+  computed: {},
+  mounted: function () {},
 };
 </script>
