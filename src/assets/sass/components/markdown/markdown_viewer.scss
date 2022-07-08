@@ -7,13 +7,36 @@
     padding: 0px 0em 0px 0.5em;
   }
   > :deep h2 {
+    margin: 1.5em 0 0 0;
     padding: 0px 0em 0px 0em;
     border-bottom: 1px solid color_variables.$md_header_border;
   }
   > :deep p img {
     display: block;
+    max-height: 340px;
     max-width: 840px;
+    object-fit: contain;
     width: 100%;
     margin: 0 auto;
+  }
+
+  > :deep ul {
+    list-style-position: inside;
+    & p:nth-child(1) {
+      margin-bottom: 3px;
+      font-weight: 900;
+      display: inline-block;
+    }
+    & p:nth-child(n + 2) {
+      text-indent: 0.5em;
+      padding-left: 1em;
+    }
+  }
+  > :deep img {
+    display: block;
+    margin: 0 auto;
+    max-height: 540px;
+    max-width: 840px;
+    object-fit: contain;
   }
 }
