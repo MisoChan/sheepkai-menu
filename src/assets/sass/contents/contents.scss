@@ -1,7 +1,7 @@
 @use "../mixin.scss" as mixin;
 @include mixin.media(sp) {
   #contents_viewer {
-    width: 97%;
+    width: 100%;
   }
 }
 @include mixin.media(tab) {

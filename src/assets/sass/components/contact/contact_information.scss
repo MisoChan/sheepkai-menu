@@ -1,19 +1,54 @@
 @use "../../commons/color_variables.scss" as color_variables;
 @use "../../mixin.scss" as mixin;
 
+@include mixin.media(sp) {
+  .contact_information {
+    margin: 0 1px 0px 0;
+  }
+  .contact_name {
+    font-size: 24px;
+  }
+}
+
+@include mixin.media(tab) {
+  .contact_information {
+    margin: 0 30px 30px 0;
+  }
+  .contact_name {
+    font-size: 32px;
+  }
+}
+
+@include mixin.media(pc) {
+  .contact_information {
+    margin: 0 30px 30px 0;
+  }
+  .contact_name {
+    font-size: 32px;
+  }
+}
+
 .contact_information {
   text-align: left;
+  background-color: color_variables.$article_body_background_color;
+  border-left: 15px solid color_variables.$accent_color_yerrow;
+  padding-left: 15px;
 }
 .contact_icon {
   max-width: 250px;
 }
 
 .contact_name {
-  font-size: 32px;
   font-style: normal;
   height: 20px;
 }
 .media_link {
   font-size: 15px;
-  margin: 0 0 10px 2em;
+  margin: 0 0 0 10px ;
+}
+.media_icon {
+  width: 32px;
+}
+.media_line {
+  margin-top: 20px;
 }

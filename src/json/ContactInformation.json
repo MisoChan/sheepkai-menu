@@ -14,7 +14,8 @@
                 "url": "https://github.com/MisoChan"
             }
         ],
-        "role": ["sitedevel","ilust","design","admin"]
+        "role": ["sitedevel","ilust","design"],
+        "contact_title": "admin"
     },
     "Imobe":{
         "name": "さつま芋辺",
@@ -26,16 +27,12 @@
                 "url": "https://twitter.com/imo_be"
             },
             {
-                "type": "skeb",
-                "name": "Skeb",
-                "url": "http://skeb.jp/@imo_be"
-            },
-            {
                 "type": "pixiv",
                 "name": "Pixiv",
                 "url": "https://www.pixiv.net/users/16049270"
             }
         ],
-        "role": ["design_adviser"]
+        "role": ["design"],
+        "contact_title": "advisor"
     }
 }

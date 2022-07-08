@@ -35,7 +35,16 @@
             "title": "件名",
             "message": "本文",
             "clear": "クリア",
-            "submit": "送信"
+            "submit": "送信",
+            "role": {
+                "sitedevel":"PG",
+                "ilust":"イラスト",
+                "design":"デザイン"
+            },
+            "contact_title":{
+                "admin":"開発＆管理者",
+                "advisor":"相談役"
+            }
         }
         
     },
