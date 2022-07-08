@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ContentView from "../views/ContentView.vue";
 import ArticleView from "../views/ArticleView.vue";
+import PortfolioView from "../views/PortfolioMenuView.vue";
 import PageNotFound from "../views/errorpage/ErrorPageView.vue";
 import { ArticleRequest } from "../script/ArticleRequest.js";
 const routes = [
@@ -27,6 +28,12 @@ const routes = [
         name: "article",
         component: ArticleView,
         meta: { functionId: "ARTICLE" },
+      },
+      {
+        path: "/portfolio",
+        name: "portfolio",
+        component: PortfolioView,
+        meta: { functionId: "PORTFOLIO" },
       },
       {
         path: "/contact",

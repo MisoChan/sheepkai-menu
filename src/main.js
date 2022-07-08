@@ -12,10 +12,12 @@ require("@/assets/sass/nomalize.scss");
 
 // TODO: デバッグ時のみこの設定をONにするようにする。
 const sanitizeOptions = {};
+const locale =
+  window.navigator.language ?? process.env.VUE_APP_DEFAULT_LANGUAGE;
 createApp(App)
   .use(VueAxios, axiosApp)
   .use(VueSanitize, sanitizeOptions)
   .use(store)
   .use(router)
-  .use(i18n, { locale: "JP" })
+  .use(i18n, { locale: locale })
   .mount("#app");

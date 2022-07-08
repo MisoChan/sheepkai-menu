@@ -1,32 +1,36 @@
 {
-    "JP":{
+    "ja":{
         "Common": {
             "sitename": "羊飼いさんとお道具箱の部屋"
         },
         "FunctionProperty": {
             "MENU":{
-               "name": "Menu",
+                "name": "Menu",
                 "description": "メインメニュー"
            },
            "WHATS_NEW":{
-               "name": "What's New?",
+                "name": "What's New?",
                 "description": "更新情報"
            },
            "SORESYS":{
-               "name": "それシス",
+                "name": "それシス",
                 "description": "それとなくシステムな毎日"
            },
            "TOOLS":{
-               "name": "Tools",
+                "name": "Tools",
                 "description": "便利な道具たち"
            },
            "ABOUT_US":{
-               "name": "About us",
+                "name": "About us",
                 "description": "このサイトについて"
            },
            "CONTACT":{
-               "name": "Contact",
+                "name": "Contact",
                 "description": "連絡先など"
+           },
+           "PORTFOLIO":{
+                "name": "Portfolio",
+                "description": "ポートフォリオ"
            }
         },
         "Contacts":{
@@ -48,7 +52,7 @@
         }
         
     },
-    "EN":{
+    "en":{
         "Common": {
             "sitename": "Sheepkai and toolboxes Room"
         },
@@ -57,25 +61,29 @@
                "name": "Menu",
                 "description": "Top menu"
            },
-           "WhatsNew":{
+           "WHATS_NEW":{
                "name": "What's New?",
                 "description": "Updates"
            },
-           "SoreSys":{
+           "SORESYS":{
                "name": "Soretonaku System Na Everyday",
                 "description": "Blogs"
            },
-           "Tools":{
+           "TOOLS":{
                "name": "Tools",
                 "description": "Tools"
            },
-           "AboutUs":{
+           "ABOUT_US":{
                "name": "About us",
                 "description": "About this site"
            },
-           "Contact":{
+           "CONTACT":{
                "name": "Contact",
                 "description": "Contact list"
+           },
+                      "PORTFOLIO":{
+                "name": "Portfolio",
+                "description": "portfolio"
            }
         },
         "Contacts":{
@@ -84,8 +92,18 @@
             "title": "件名",
             "message": "本文",
             "clear": "クリア",
-            "submit": "送信"
-        }
+            "submit": "送信",
+            "role": {
+                "sitedevel":"Programming",
+                "ilust":"Ilust",
+                "design":"Design"
+            },
+            "contact_title":{
+                "admin":"Administartor",
+                "advisor":"Adviser"
+            }       
+        }          
+
         
     }
 }
