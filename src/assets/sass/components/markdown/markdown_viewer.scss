@@ -32,11 +32,29 @@
       padding-left: 1em;
     }
   }
+  > :deep ol {
+    list-style-position: inside;
+    & p:nth-child(1) {
+      margin-bottom: 3px;
+      font-weight: 900;
+      display: inline-block;
+    }
+    & p:nth-child(n + 2) {
+      text-indent: 0.5em;
+      padding-left: 1em;
+    }
+  }
   > :deep img {
     display: block;
     margin: 0 auto;
     max-height: 540px;
-    max-width: 840px;
+    width: 100%;
     object-fit: contain;
+  }
+  > :deep pre {
+    white-space: pre-wrap;
+    background-color: color_variables.$article_code_background_color;
+    color: color_variables.$white_textcolor;
+    padding: 20px;
   }
 }
