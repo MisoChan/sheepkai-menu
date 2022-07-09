@@ -52,7 +52,7 @@
     object-fit: contain;
   }
   > :deep pre {
-    white-space: pre-wrap;
+    overflow: auto;
     background-color: color_variables.$article_code_background_color;
     color: color_variables.$white_textcolor;
     padding: 20px;
