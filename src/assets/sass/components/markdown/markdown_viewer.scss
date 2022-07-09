@@ -11,6 +11,11 @@
     padding: 0px 0em 0px 0em;
     border-bottom: 1px solid color_variables.$md_header_border;
   }
+  > :deep h3 {
+    margin: 1.5em 0 0 0;
+    padding: 10px 10px 10px 10px;
+    border-left: 15px solid color_variables.$md_header_border;
+  }
   > :deep p img {
     display: block;
     max-height: 340px;
