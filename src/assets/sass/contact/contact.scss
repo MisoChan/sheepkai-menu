@@ -80,7 +80,8 @@
   #contact_view_wrapper {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 600px 1fr;
-    max-height: 900px;
+    height: 900px;
+
   }
   #contact_information_wrapper {
     grid-row: 1/3;
