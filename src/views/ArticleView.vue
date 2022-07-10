@@ -82,7 +82,6 @@ export default {
     // 記事ページのロード処理
     async onLoad() {
       const request = new ArticleRequest(window.location.search);
-      this.$store.commit("setPageTitle", this.article_property.article_title);
       // 早期リターン：UNKNOWNだった場合は即Returnして処理を終了する
       if (request.judgeArticleRequestType() === "UNKNOWN") {
         return null;

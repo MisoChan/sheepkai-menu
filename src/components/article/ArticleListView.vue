@@ -6,9 +6,7 @@
         v-for="article in articleData"
         :key="article.article_url"
       >
-        <router-link :to="article.full_article_url">
-          <ArticleListContents :contents="article"></ArticleListContents>
-        </router-link>
+        <ArticleListContents :contents="article"></ArticleListContents>
       </div>
     </div>
   </div>
@@ -32,6 +30,11 @@ export default {
           content.function_cd +
           "&article_url=" +
           content.article_url;
+
+        new_content["params"] = {
+          function_cd: content.function_cd,
+          article_url: content.article_url,
+        };
         return new_content;
       });
       return array;

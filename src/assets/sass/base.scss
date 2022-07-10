@@ -29,7 +29,6 @@ html {
 
 div {
   box-sizing: border-box;
-
 }
 body {
   height: 100vh;
@@ -95,4 +94,8 @@ body > #bg_img {
   &:disabled {
     background-color: color_variables.$accent_color_red_disabled;
   }
+}
+
+button {
+  cursor: pointer;  
 }

@@ -199,6 +199,9 @@ button,
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
+  background-color: transparent;
+  border: none;
+  padding: 0;
 }
 
 /**
