@@ -24,14 +24,14 @@ build-and-lint-job:       # This job runs in the build stage, which runs first.
   script:
     - echo "Compiling the code..."
     - pwd
-    - bash scripts/test_sheepakinet.sh
+    - bash scripts/test_sheepkainet.sh
     - echo "Compile complete."
 
 
 stage-deploy-job:
   stage: stage-deploy
   script:
-    - bash scripts/stage_sheepakinet.sh
+    - bash scripts/stage_sheepkainet.sh
 
 
 deploy-job:      # This job runs in the deploy stage.
