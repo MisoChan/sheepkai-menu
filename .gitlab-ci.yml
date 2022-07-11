@@ -23,14 +23,14 @@ build-and-lint-job:       # This job runs in the build stage, which runs first.
   stage: build
   script:
     - echo "Compiling the code..."
-    - sh ./sctipts/test_sheepakinet.sh
+    - sh ./scripts/test_sheepakinet.sh
     - echo "Compile complete."
 
 
 stage-deploy-job:
   stage: stage-deploy
   script:
-    - sh ./sctipts/stage_sheepakinet.sh
+    - sh ./scripts/stage_sheepakinet.sh
 
 
 deploy-job:      # This job runs in the deploy stage.
