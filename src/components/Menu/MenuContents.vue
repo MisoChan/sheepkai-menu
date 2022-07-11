@@ -1,14 +1,14 @@
 <template>
-  <div class="menu_contents">
-    <router-link :to="item.link">
+  <button @click="onClick()">
+    <div class="menu_contents">
       <div class="menu_icon_frame">
         <img class="menu_icon_img" :src="item.imagesrc" />
       </div>
       <div class="menu_contents_name">
         {{ item.contents_title }}
       </div>
-    </router-link>
-  </div>
+    </div>
+  </button>
 </template>
 <style
   lang="scss"
@@ -21,6 +21,11 @@ export default {
     item: {
       Type: Object,
       Require: true,
+    },
+  },
+  methods: {
+    onClick() {
+      this.$router.push(this.item.link);
     },
   },
 };

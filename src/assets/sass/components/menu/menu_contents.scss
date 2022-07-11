@@ -22,15 +22,12 @@
 
 .menu_contents {
   display: grid;
-  margin-right:auto; margin-left:auto;
+  margin-right: auto;
+  margin-left: auto;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(1, 1fr);
   text-align: center;
 }
 .menu_icon_img {
   height: auto;
-}
-
-.menu_contents_name {
-  font-family: "Mplus 1p";
 }

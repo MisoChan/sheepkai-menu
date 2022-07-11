@@ -1,5 +1,10 @@
 @use "commons/color_variables.scss" as color_variables;
 
+@font-face {
+  font-family: "01FLOPDESIGN", Regular;
+  src: url("~@/assets/fonts/FLOPDesignFont.ttf") format("truetype");
+}
+
 input[type="text"] {
   border: 1px solid;
   border-color: color_variables.$background_color;
@@ -39,6 +44,7 @@ a {
 }
 
 #app {
+  font-family: "01FLOPDESIGN", cursive;
   margin: 0;
   padding: 0;
   height: calc(100%);
@@ -97,5 +103,5 @@ body > #bg_img {
 }
 
 button {
-  cursor: pointer;  
+  cursor: pointer;
 }
