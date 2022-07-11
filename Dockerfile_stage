@@ -2,7 +2,7 @@
 FROM node:lts-alpine as build-stage
 WORKDIR /app
 COPY package*.json ./
-RUN rm -rf node_modules package-lock.json;npm install --location=global @vue/cli @vue/cli-init;npm install --production --cache /tmp/empty-cache && rm -rf /tmp/empty-cache
+RUN rm -rf ./node_modules ./package-lock.json;npm install;
 COPY . .
 RUN npm run lint;
 RUN npm run build;
