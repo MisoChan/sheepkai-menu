@@ -2,7 +2,7 @@
 FROM node:lts-alpine as build-stage
 WORKDIR /app
 COPY package*.json ./
-RUN npm install -g --production --cache /tmp/empty-cache && rm -rf /tmp/empty-cache
+RUN npm install -g @vue/cli @vue/cli-init;npm install -g --production --cache /tmp/empty-cache && rm -rf /tmp/empty-cache
 COPY . .
 RUN npm run build;npm run lint
 
