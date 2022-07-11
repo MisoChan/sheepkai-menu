@@ -1,14 +1,13 @@
-#nodeイメージをpullする
-FROM node:10.15.3-alpine
-
-#working directory
+# ビルド環境
+FROM node:lts-alpine as build-stage
 WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
 
-#vuecliインストール
-RUN npm install -g @vue/cli
-
-#shファイルをコンテナにコピー
-COPY ./scripts/docker.start.sh /scripts/start.sh
-
-#shフォルダの権限追加（全員実行可）
-RUN chmod +x /scripts/*
+# 本番環境
+FROM nginx:stable-alpine as production-stage
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
