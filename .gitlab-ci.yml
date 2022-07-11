@@ -15,33 +15,31 @@
 
 stages:          # List of stages for jobs, and their order of execution
   - build
-  - test
+  - stage-deploy
   - deploy
   
 
-image: "node:lts-alpine"
-
 build-and-lint-job:       # This job runs in the build stage, which runs first.
   stage: build
-  tags: 
-    -  sheepkai-test
   script:
     - npm install
     - echo "Compiling the code..."
     - echo "Compile complete."
 
 
-lint-test-job:   # This job also runs in the test stage.
-  stage: test    # It can run at the same time as unit-test-job (in parallel).
+stage-deploy-job:
+  stage: stage-deploy
   script:
-    - npm install
-    - npm run lint
+    - sh test_sheepaki.net.sh
 
 
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
+  only:
+  - deploy
   script:
     - echo "Deploying application..."
     - npm install
     - npm run build
     - echo "Application successfully deployed."
+
