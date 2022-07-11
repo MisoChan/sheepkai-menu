@@ -23,7 +23,8 @@ image: "node:lts-alpine"
 
 build-and-lint-job:       # This job runs in the build stage, which runs first.
   stage: build
-  tag: sheepkai-test
+  tags: 
+    -  sheepkai-test
   script:
     - npm install
     - echo "Compiling the code..."
