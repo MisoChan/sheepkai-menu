@@ -7,7 +7,8 @@ COPY . .
 RUN npm run lint;npm run build;
 
 #production環境
-FROM build-stage as production-stage
-COPY --from=build /app/dist /usr/share/nginx/html
+FROM nginx:latest as production-stage
+RUN mkdir /app
+COPY --from=build-stage /app/dist /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
