@@ -24,7 +24,7 @@ development-job:       # This job runs in the build stage, which runs first.
   only:
   - develop
   script:
-    - bash scripts/build_sheepkainet.sh $CI_BUILD_REF_NAME "65080"
+    - bash scripts/build_sheepkainet.sh $CI_BUILD_REF_NAME "develop" "65080"
 
 ci-development-job:       
   stage: develop-deploy
