@@ -31,7 +31,7 @@ ci-development-job:
   only:
   - ci-working
   script:
-    - bash scripts/build_sheepkainet.sh $CI_BUILD_REF_NAME "61080"
+    - bash scripts/build_sheepkainet.sh $CI_BUILD_REF_NAME "develop" "61080"
 
 stage-deploy-job:
   stage: stage-deploy
