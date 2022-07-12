@@ -11,5 +11,6 @@ RUN npm run build;
 FROM nginx:latest as deploy-stage
 RUN mkdir /app
 COPY --from=build-stage /app/dist /usr/share/nginx/html
+COPY --from=build-stage /app/nginx/default.conf /usr/share/nginx/
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
