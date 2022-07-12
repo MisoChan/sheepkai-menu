@@ -25,7 +25,7 @@ development-job:       # This job runs in the build stage, which runs first.
   - develop
   - ci-working
   script:
-    - bash scripts/develop_sheepkainet.sh
+    - bash scripts/build_sheepkainet.sh $CI_BUILD_REF_NAME
 
 
 stage-deploy-job:
@@ -33,7 +33,7 @@ stage-deploy-job:
   only:
   - stage
   script:
-    - bash scripts/stage_sheepkainet.sh
+    - bash scripts/build_sheepkainet.sh $CI_BUILD_REF_NAME
 
 
 deploy-job:      # This job runs in the deploy stage.
@@ -41,8 +41,5 @@ deploy-job:      # This job runs in the deploy stage.
   only:
   - deploy
   script:
-    - echo "Deploying application..."
-    - npm install
-    - npm run build
-    - echo "Application successfully deployed."
+    - bash scripts/build_sheepkainet.sh $CI_BUILD_REF_NAME
 

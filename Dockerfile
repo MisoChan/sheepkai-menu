@@ -1,13 +1,14 @@
 # ビルド環境
 FROM node:lts-alpine as build-stage
 WORKDIR /app
-COPY package.json ./
-RUN rm -rf node_modules package-lock.json;npm install -g @vue/cli @vue/cli-init;npm install --production --cache /tmp/empty-cache && rm -rf /tmp/empty-cache
+COPY package*.json ./
+RUN rm -rf ./node_modules ./package-lock.json;npm install;
 COPY . .
-RUN npm run lint;npm run build;
+RUN npm run lint;
+RUN npm run build;
 
-#production環境
-FROM nginx:latest as production-stage
+# 環境構築
+FROM nginx:latest as deploy-stage
 RUN mkdir /app
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 EXPOSE 80
