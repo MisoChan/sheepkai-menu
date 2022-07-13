@@ -1,6 +1,5 @@
 #!bin/bash
-SCRIPT_DIR=$(cd $(dirname $0); pwd)
-cd SCRIPT_DIR;cd ../
+pwd
 docker stop "sheepkai-menu-front-"$1 || true && docker rm "sheepkai-menu-front-"$1 || true
 cp ".env.branch-"$1 ".env.production"
 docker image build  --no-cache --force-rm=true --target deploy-stage -t "sheepkai-menu-front:"$1  "--build-arg=production" ./ 
