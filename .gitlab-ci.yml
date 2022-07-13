@@ -38,7 +38,8 @@ stage-deploy-job:
   only:
   - stage
   script:
-    - bash scripts/build_sheepkainet.sh $CI_BUILD_REF_NAME "62080"
+    - sshpass scp -r ./ /home/runner/sheepkai-menu-frontend runner@20.0.0.12
+    - sshpass bash /home/runner/sheepkai-menu-frontend/scripts/build_sheepkainet.sh $CI_BUILD_REF_NAME "62080" runner@20.0.0.12
 
 
 deploy-job:      # This job runs in the deploy stage.
