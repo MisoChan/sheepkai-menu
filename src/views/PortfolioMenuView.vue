@@ -1,11 +1,14 @@
 <template>
-  <div>
+  <div id="portfolio_top_view_wrapper">
     <ArticleListView
       :articleInformation="this.article_property"
     ></ArticleListView>
+    <div id="portfolio_picture_wrapper">
+      <img src="/icons/PORTFOLIO.png" id="portfolio_top_picture" />
+    </div>
   </div>
 </template>
-
+<style lang="scss" scoped src="@/assets/sass/portfolio/portfolio_top.scss" />
 <script>
 import ArticleListView from "@/components/article/ArticleListView.vue";
 import { ArticleRequest } from "@/script/ArticleRequest";
