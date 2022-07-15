@@ -7,7 +7,7 @@
           {{ article_property.article_subtitle }}
         </div>
       </div>
-      <div class="article_top_information" v-if="is_articlepage">
+      <div class="article_top_information" v-if="is_articlepage & pageLoaded">
         <div class="article_top_author">著者:ナノ式</div>
         <div class="article_reflesh_date">
           最終更新: {{ article_property.upload_date }}
@@ -37,7 +37,7 @@
       </div>
     </div>
     <div id="article_information_margin"></div>
-
+    <ModalMessage ref="popup"></ModalMessage>
     <!-- V-IF ↓記事を表示する場合↓ -->
     <div id="article_view" v-if="is_articlepage">
       <ArticleTextView
@@ -69,18 +69,26 @@ export default {
   data: function () {
     return {
       article_property: {},
-      is_articlepage: "false",
+      loading_property: {
+        article_title: this.$translate("Common", "loading"),
+        article_subtitle: this.$translate("Common", "loading_subtitle"),
+        article_data: this.$translate("Common", "loading"),
+      },
+      pageLoaded: false,
+      is_articlepage: false,
     };
   },
   watch: {
     // 記事コンポーネント同士のRouter Push時に、再ロードさせる
     $route() {
+      this.article_property = this.loading_property;
       this.onLoad();
     },
   },
   methods: {
     // 記事ページのロード処理
     async onLoad() {
+      this.pageLoaded = false;
       const request = new ArticleRequest(window.location.search);
       // 早期リターン：UNKNOWNだった場合は即Returnして処理を終了する
       if (request.judgeArticleRequestType() === "UNKNOWN") {
@@ -89,13 +97,13 @@ export default {
       // 記事ページかどうかを判定
       this.is_articlepage =
         request.judgeArticleRequestType() === "ARTICLE_DATA";
-
       // TRUE：記事ページ、FALSE：記事一覧取得ルーチン実行
       if (await this.is_articlepage) {
+        await this.$refs.popup.openModal("LOADING");
         this.article_property = await request.getArticleAsync();
       } else {
+        await this.$refs.popup.openModal("LOADING");
         this.article_property = await request.getArticleListAsync();
-
         // リストタイトルと説明をセット
         this.article_property.article_title = this.$translate(
           "FunctionProperty",
@@ -106,10 +114,13 @@ export default {
           request.getArticleRequestParameter()["function_cd"]
         )["description"];
       }
+      await this.$refs.popup.closeModal();
       this.$store.commit("setPageTitle", this.article_property.article_title);
+      this.pageLoaded = true;
     },
   },
   created: async function () {
+    this.article_property = this.loading_property;
     await this.onLoad();
   },
 };

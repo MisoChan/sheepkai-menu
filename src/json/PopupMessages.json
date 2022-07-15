@@ -1,6 +1,28 @@
 {
-    "JP":{
-        "SUCCESS":{
+    "jp":{
+        "POPUP":{
+            "LOADING": {
+            "title": "ロード中",
+            "description": "ちょっとまっててください。",
+            "icon": "Eating_boxchan.png"
+            },
+            "ERROR_FAILED": {
+                "title": "通信に失敗しました。",
+                "description": "数分時間をおいた上で、今一度お試しください。",
+                "icon": "Eating_boxchan.png"
+            },
+            "ACCESS_DENIED":{
+                "title": "リンク先はご利用できません。",
+                "description": "またのアクセスをお待ちしております。",
+                "icon": "Eating_boxchan.png"
+            },
+            "ERROR_BLACK_COMPANY":{
+                "title": "悪いこと言わないから…",
+                "description": "今すぐこの会社から逃げて！",
+                "icon": "Eating_boxchan.png"
+            }
+        },
+        "SUCCESS_SEND":{
             "title": "送信完了！",
             "description": "メッセージをありがとうございます。",
             "icon": "Eating_boxchan.png"
@@ -16,7 +38,7 @@
             "icon": "Eating_boxchan_error.png"
         },
         "ERROR_FAILED": {
-            "title": "登録に失敗しました。",
+            "title": "通信に失敗しました。",
             "description": "通信エラーが発生しました。数分時間をおいた上で、今一度お試しください。",
             "icon": "Eating_boxchan.png"
         },

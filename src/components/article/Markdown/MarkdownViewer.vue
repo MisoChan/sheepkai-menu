@@ -39,7 +39,7 @@ export default {
     },
   },
   watch: {
-    markdownText() {
+    async markdownText() {
       const articleData = this.markdownData().childNodes;
       Array.from(articleData).map((element) => {
         this.$refs.markdown_text.appendChild(element);
