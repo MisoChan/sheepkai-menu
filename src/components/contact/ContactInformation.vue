@@ -1,7 +1,9 @@
 <template>
   <div class="contact_information">
     <p class="contact_name">{{ mediaData.name }}</p>
-    <div>{{ getRoleString(mediaData.role).join(",") }}</div>
+    <div class="contact_role">
+      {{ getRoleString(mediaData.role).join(", ") }}
+    </div>
     <div>{{ getContactTitle(mediaData.contact_title) }}</div>
     <div
       v-for="media in mediaData.contactMedia"

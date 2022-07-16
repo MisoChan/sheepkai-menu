@@ -81,7 +81,6 @@
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 600px 1fr;
     height: 900px;
-
   }
   #contact_information_wrapper {
     grid-row: 1/3;
@@ -118,4 +117,7 @@
 
 #contact_image {
   max-width: 100%;
+}
+.contact_role {
+  overflow-wrap: anywhere;
 }
