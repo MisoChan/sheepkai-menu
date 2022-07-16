@@ -1,7 +1,10 @@
 <template>
   <ModalPopup :show="this.showModal" :onClose="this.closeModal">
     <div class="message_window" @click.stop="">
-      <img :src="'/icons/popup/' + this.messageProperty.icon" />
+      <img
+        class="message_icon"
+        :src="'/icons/popup/' + this.messageProperty.icon"
+      />
       <div class="message_title">{{ this.messageProperty.title }}</div>
       <div class="message_description">
         {{ this.messageProperty.description }}
@@ -9,7 +12,11 @@
     </div>
   </ModalPopup>
 </template>
-
+<style
+  lang="scss"
+  scoped
+  src="@/assets/sass/components/modal/message_popup.scss"
+></style>
 <script>
 import ModalPopup from "@/components/modal/ModalPopup.vue";
 import ModalMessages from "@/json/PopupMessages.json";

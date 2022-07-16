@@ -72,7 +72,7 @@ export default {
       loading_property: {
         article_title: this.$translate("Common", "loading"),
         article_subtitle: this.$translate("Common", "loading_subtitle"),
-        article_data: this.$translate("Common", "loading"),
+        article_md_text: "#" + this.$translate("Common", "loading"),
       },
       pageLoaded: false,
       is_articlepage: false,
@@ -98,23 +98,24 @@ export default {
       this.is_articlepage =
         request.judgeArticleRequestType() === "ARTICLE_DATA";
       // TRUE：記事ページ、FALSE：記事一覧取得ルーチン実行
-      if (await this.is_articlepage) {
-        await this.$refs.popup.openModal("LOADING");
-        this.article_property = await request.getArticleAsync();
-      } else {
-        await this.$refs.popup.openModal("LOADING");
-        this.article_property = await request.getArticleListAsync();
-        // リストタイトルと説明をセット
-        this.article_property.article_title = this.$translate(
-          "FunctionProperty",
-          request.getArticleRequestParameter()["function_cd"]
-        )["name"];
-        this.article_property.article_subtitle = this.$translate(
-          "FunctionProperty",
-          request.getArticleRequestParameter()["function_cd"]
-        )["description"];
+      try {
+        if (await this.is_articlepage) {
+          this.article_property = await request.getArticleAsync();
+        } else {
+          this.article_property = await request.getArticleListAsync();
+          // リストタイトルと説明をセット
+          this.article_property.article_title = this.$translate(
+            "FunctionProperty",
+            request.getArticleRequestParameter()["function_cd"]
+          )["name"];
+          this.article_property.article_subtitle = this.$translate(
+            "FunctionProperty",
+            request.getArticleRequestParameter()["function_cd"]
+          )["description"];
+        }
+      } catch (exception) {
+        this.$refs.popup.openModal("ERROR_FAILED");
       }
-      await this.$refs.popup.closeModal();
       this.$store.commit("setPageTitle", this.article_property.article_title);
       this.pageLoaded = true;
     },

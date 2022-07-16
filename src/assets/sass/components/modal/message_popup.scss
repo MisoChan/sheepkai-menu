@@ -1,5 +1,18 @@
-#popup_overray {
-  background-color: $article_code_background_color;
-  height: 10vh;
-  position: absolute;
+@use "../../commons/color_variables.scss" as color_variables;
+@use "../../mixin.scss" as mixin;
+.message_window {
+  background-color: color_variables.$modal_window_color;
+  padding: 30px;
+  max-width: 430px;
+  width: 100%;
+  transform: translateY(90%) translateX(0%);
+  opacity: 1;
+  margin: auto;
+  z-index: 10000;
+  text-align: center;
+}
+.message_icon {
+  max-width: 256px;
+  width: 100%;
+  vertical-align: middle;
 }
