@@ -27,11 +27,11 @@
 #content_head_wrapper {
   position: -webkit-sticky;
   position: sticky;
-  width: 100vw;
+  width: 100%;
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 1fr 2fr 1fr ;
-  
+  grid-template-columns: 1fr 2fr 1fr;
+
   & div {
     color: color_variables.$white_textcolor;
     height: 100%;
@@ -50,9 +50,19 @@
   #header_site_title {
     visibility: hidden;
   }
+  #content_head_wrapper {
+    width: 95%;
+    margin: 0 auto;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+  }
 }
 @include mixin.media(sp) {
   #header_site_title {
     visibility: hidden;
+  }
+  #content_head_wrapper {
+    width: 95%;
+    margin: 0 auto;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
   }
 }

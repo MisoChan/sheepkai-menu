@@ -5,13 +5,14 @@
   #contact_view_wrapper {
     min-height: 500px;
     min-width: 365px;
+    padding-bottom:10px;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
   }
   #contact_information_wrapper {
     grid-row: 2/3;
     grid-column: 1/3;
-    margin: 0 0 0 0px;
+    margin: 0 0 0px 0px;
     text-align: left;
     display: grid;
     grid-template-rows: 1fr;
@@ -25,9 +26,9 @@
     grid-template-columns: 1fr 1fr;
   }
   .contact_image {
-    margin: 16px;
+    margin: 0px;
     max-height: 300px;
-    width: 100%;
+    width: 95%;
     object-fit: contain;
   }
   .sp_left {
@@ -117,7 +118,4 @@
 
 #contact_image {
   max-width: 100%;
-}
-.contact_role {
-  overflow-wrap: anywhere;
 }

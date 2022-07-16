@@ -9,17 +9,20 @@
             "ERROR_FAILED": {
                 "title": "通信に失敗しました。",
                 "description": "ネット環境をご確認の上、今一度お試しください。",
-                "icon": "Eating_boxchan.png"
+                "icon": "Eating_boxchan.png",
+                "action": "reload"
             },
             "ACCESS_DENIED":{
                 "title": "リンク先はご利用できません。",
                 "description": "またのアクセスをお待ちしております。",
-                "icon": "Eating_boxchan.png"
+                "icon": "Eating_boxchan.png",
+                "action": "back"
             },
             "ERROR_BLACK_COMPANY":{
-                "title": "悪いこと言わないから…",
-                "description": "今すぐこの会社から逃げて！",
-                "icon": "Eating_boxchan.png"
+                "title": "ところで…",
+                "description": "暇なの？",
+                "icon": "Eating_boxchan.png",
+                "action": "back"
             }
         },
         "SUCCESS_SEND":{
