@@ -12,7 +12,6 @@
     margin-top: 2px;
     border-width: 1px 0 0 0;
     border-style: solid;
-    
   }
 }
 #content_head_title {
@@ -28,10 +27,11 @@
 #content_head_wrapper {
   position: -webkit-sticky;
   position: sticky;
-  width: 100%;
+  width: 100vw;
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 1.2fr 4fr 1.2fr;
+  grid-template-columns: 1fr 2fr 1fr ;
+  
   & div {
     color: color_variables.$white_textcolor;
     height: 100%;
