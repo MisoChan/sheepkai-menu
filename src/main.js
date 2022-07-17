@@ -10,6 +10,7 @@ import ModalMessage from "@/components/modal/MessagePopupWindow.vue";
 require("@/assets/sass/commons/color_variables.scss");
 require("@/assets/sass/base.scss");
 require("@/assets/sass/nomalize.scss");
+require("@/assets/sass/common_parts.scss");
 
 // TODO: デバッグ時のみこの設定をONにするようにする。
 const sanitizeOptions = {};

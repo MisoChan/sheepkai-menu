@@ -5,6 +5,10 @@
             "loading": "ロード中…",
             "loading_subtitle": "データ受信中…"
         },
+        "MessageAction":{
+            "reload":"再読込",
+            "back": "戻る"
+        },
         "FunctionProperty": {
             "MENU":{
                 "name": "Menu",
@@ -58,6 +62,10 @@
         "Common": {
             "sitename": "Sheepkai and toolboxes Room",
             "loading": "Loading…"
+        },
+        "MessageAction":{
+            "reload":"Reload",
+            "back": "Back"
         },
         "FunctionProperty": {
             "MENU":{

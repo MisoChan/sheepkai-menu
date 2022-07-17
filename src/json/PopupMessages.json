@@ -70,6 +70,32 @@
             "description": "NGワードが含まれています。表現を変えてもう一度おためしください。",
             "icon": "Eating_boxchan.png"
         }
+    },
+    "en":{
+        "POPUP":{
+            "LOADING": {
+            "title": "Now loading...",
+            "description": "Wait a minutes...",
+            "icon": "Eating_boxchan.png"
+            },
+            "ERROR_FAILED": {
+                "title": "Connection failed.",
+                "description": "Please check your internet connection.",
+                "icon": "Eating_boxchan.png",
+                "action": "reload"
+            },
+            "ACCESS_DENIED":{
+                "title": "This page is unavailable.",
+                "description": "",
+                "icon": "Eating_boxchan.png",
+                "action": "back"
+            },
+            "ERROR_BLACK_COMPANY":{
+                "title": "By the way...",
+                "description": "You must be really bored. Huh?",
+                "icon": "Eating_boxchan.png",
+                "action": "back"
+            }
+        }
     }
-    
 }

@@ -1,0 +1,7 @@
+@use "commons/color_variables.scss" as color_variables;
+
+.button_normal{
+    background-color: color_variables.$accent_color_normal;
+    color: color_variables.$white_textcolor;
+    padding: 0.7em 2em 0.7em 2em;
+}

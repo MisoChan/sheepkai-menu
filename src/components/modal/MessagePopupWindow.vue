@@ -5,10 +5,13 @@
         class="message_icon"
         :src="'/icons/popup/' + this.messageProperty.icon"
       />
-      <div class="message_title">{{ this.messageProperty.title }}</div>
-      <div class="message_description">
+      <p class="message_title">{{ this.messageProperty.title }}</p>
+      <p class="message_description">
         {{ this.messageProperty.description }}
-      </div>
+      </p>
+      <button class="messsage_action_button button_normal">
+        {{ this.$translate("MessageAction", this.messageProperty.action) }}
+      </button>
     </div>
   </ModalPopup>
 </template>
