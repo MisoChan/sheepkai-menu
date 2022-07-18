@@ -9,7 +9,7 @@
       <p class="message_description">
         {{ this.messageProperty.description }}
       </p>
-      <button class="messsage_action_button button_normal">
+      <button class="messsage_action_button button_normal" @click="onClick()">
         {{ this.$translate("MessageAction", this.messageProperty.action) }}
       </button>
     </div>
@@ -21,6 +21,7 @@
   src="@/assets/sass/components/modal/message_popup.scss"
 ></style>
 <script>
+"use strict";
 import ModalPopup from "@/components/modal/ModalPopup.vue";
 import ModalMessages from "@/json/PopupMessages.json";
 export default {
@@ -37,23 +38,42 @@ export default {
   data: function () {
     return {
       showModal: false,
-      messageProperty: "",
+      messageProperty: {},
     };
   },
   methods: {
     closeModal() {
       this.showModal = false;
-      console.log("MODAL_CLOSE");
     },
     openModal(messageId) {
       // 今の所日本語しか対応してません！
-      console.log("MODAL");
       const language = this.$store.getters.getLanguage;
       const message =
         ModalMessages[language] ??
         ModalMessages[process.env.VUE_APP_DEFAULT_LANGUAGE];
       this.messageProperty = message["POPUP"][messageId];
       this.showModal = true;
+    },
+    executeReload() {
+      this.$router.go({
+        path: this.$router.currentRoute.path,
+        force: true,
+      });
+    },
+    executeBack() {
+      this.$router.go(-1);
+    },
+    onClick() {
+      const actions = {
+        reload() {
+          location.reload();
+        },
+        back() {
+          history.back();
+        },
+      };
+      this.showModal = true;
+      actions[this.messageProperty.action].call();
     },
   },
 };

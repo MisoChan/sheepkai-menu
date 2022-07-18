@@ -89,6 +89,7 @@ export default {
     // 記事ページのロード処理
     async onLoad() {
       this.pageLoaded = false;
+
       const request = new ArticleRequest(window.location.search);
       // 早期リターン：UNKNOWNだった場合は即Returnして処理を終了する
       if (request.judgeArticleRequestType() === "UNKNOWN") {
@@ -96,10 +97,11 @@ export default {
       }
       // 記事ページかどうかを判定
       this.is_articlepage =
-        request.judgeArticleRequestType() === "ARTICLE_DATA";
+        (await request.judgeArticleRequestType()) === "ARTICLE_DATA";
       // TRUE：記事ページ、FALSE：記事一覧取得ルーチン実行
       try {
-        if (await this.is_articlepage) {
+        this.$refs.popup.closeModal();
+        if (this.is_articlepage) {
           this.article_property = await request.getArticleAsync();
         } else {
           this.article_property = await request.getArticleListAsync();

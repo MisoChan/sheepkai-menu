@@ -58,7 +58,7 @@ export default {
           link: "article?function_cd=ABOUT_US",
         },
         {
-          imagesrc: "/icons/Eating_boxchan.webp",
+          imagesrc: "/icons/POST.webp",
           contents_title: this.getFunctionName("CONTACT"),
           link: "contact",
         },
