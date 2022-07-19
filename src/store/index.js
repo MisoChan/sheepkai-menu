@@ -3,6 +3,7 @@ import { createStore } from "vuex";
 export default createStore({
   state: {
     pageTitle: "",
+    description: "",
     language: "jp",
   },
   getters: {
@@ -17,6 +18,9 @@ export default createStore({
     setPageTitle(state, title) {
       this.state.pageTitle = title ? title : "LOADING...";
       document.title = this.state.pageTitle + " | sheepkai.net";
+    },
+    setPageDescription(state, desc) {
+      this.state.description = desc;
     },
     setLanguage(state, language) {
       this.state.langeage = language;

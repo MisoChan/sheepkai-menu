@@ -61,6 +61,7 @@
 import ArticleTextView from "@/components/article/ArticleTextView.vue";
 import ArticleListView from "@/components/article/ArticleListView.vue";
 import { ArticleRequest } from "@/script/ArticleRequest";
+import { MetatagController } from "@/script/MetaTagController.js";
 export default {
   components: {
     ArticleTextView,
@@ -71,7 +72,7 @@ export default {
       article_property: {},
       loading_property: {
         article_title: this.$translate("Common", "loading"),
-        article_subtitle: this.$translate("Common", "loading_subtitle"),
+        article_subtitle: this.$translate("Common", "loading..."),
         article_md_text: "#" + this.$translate("Common", "loading"),
       },
       pageLoaded: false,
@@ -115,11 +116,20 @@ export default {
             request.getArticleRequestParameter()["function_cd"]
           )["description"];
         }
+        this.$store.commit(
+          "setPageDescription",
+          this.article_property.article_subtitle
+        );
+        new MetatagController().setMetatag({
+          title: this.article_property.article_title,
+          description: this.article_property.article_description,
+          pagetype: "article",
+        });
+        this.$store.commit("setPageTitle", this.article_property.article_title);
+        this.pageLoaded = true;
       } catch (exception) {
         this.$refs.popup.openModal("ERROR_FAILED");
       }
-      this.$store.commit("setPageTitle", this.article_property.article_title);
-      this.pageLoaded = true;
     },
   },
   created: async function () {
