@@ -1,4 +1,5 @@
 <template>
+  <ModalMessage ref="popup"></ModalMessage>
   <div id="article_view_wrapper">
     <div id="article_top_wrapper">
       <div id="article_title_wrapper">
@@ -37,7 +38,6 @@
       </div>
     </div>
     <div id="article_information_margin"></div>
-    <ModalMessage ref="popup"></ModalMessage>
     <!-- V-IF ↓記事を表示する場合↓ -->
     <div id="article_view" v-if="is_articlepage">
       <ArticleTextView

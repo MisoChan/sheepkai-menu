@@ -5,16 +5,16 @@
     opacity: 0;
   }
   to {
-    opacity: 1.0;
+    opacity: 1;
   }
 }
 #popup_overray {
   position: absolute;
-  margin: auto;
-  top:0;
+  float: inherit;
+  margin: 0;
   left: 0;
-  z-index: 999;
-  width: 100%;
+  z-index: 91919;
+  width: 100vw;
   height: 100%;
   background-color: color_variables.$modal_background_color;
   animation: show 0.5s linear 0s;
