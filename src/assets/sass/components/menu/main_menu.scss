@@ -34,6 +34,9 @@
 
     padding: 40px;
   }
+  .site_name {
+    font-size: 34px;
+  }
   #menu_contents {
     height: 98%;
     grid-template-columns: repeat(5, 1fr);
@@ -86,6 +89,7 @@
 #menu_contents {
   display: grid;
   width: 100%;
+  text-align: center;
 }
 .menu_contents_wrapper {
   width: 100%;
