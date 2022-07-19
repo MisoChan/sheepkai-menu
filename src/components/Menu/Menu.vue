@@ -1,5 +1,6 @@
 <template>
   <div id="main_menu">
+    <p class="site_name">{{ this.$translate("Common", "sitename") }}</p>
     <div id="menu_contents">
       <div
         class="menu_contents_wrapper"
