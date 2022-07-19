@@ -4,19 +4,19 @@
             "ERROR_FAILED": {
                 "title": "通信に失敗しました。",
                 "description": "ネット環境をご確認の上、今一度お試しください。",
-                "icon": "Eating_boxchan.png",
+                "icon": "Eating_boxchan.webp",
                 "action": "reload"
             },
             "ACCESS_DENIED":{
                 "title": "リンク先はご利用できません。",
                 "description": "またのアクセスをお待ちしております。",
-                "icon": "Eating_boxchan.png",
+                "icon": "Gurume_Hako.webp",
                 "action": "back"
             },
             "ERROR_BLACK_COMPANY":{
                 "title": "ところで…",
                 "description": "暇なの？",
-                "icon": "Eating_boxchan.png",
+                "icon": "Gurume_Hako.webp",
                 "action": "back"
             }
         },
@@ -76,19 +76,19 @@
             "ERROR_FAILED": {
                 "title": "Connection failed.",
                 "description": "Please check your internet connection.",
-                "icon": "Eating_boxchan.png",
+                "icon": "Eating_boxchan.webp",
                 "action": "reload"
             },
             "ACCESS_DENIED":{
                 "title": "This page is unavailable.",
                 "description": "",
-                "icon": "Eating_boxchan.png",
+                "icon": "Gurume_Hako.webp",
                 "action": "back"
             },
             "ERROR_BLACK_COMPANY":{
                 "title": "By the way...",
                 "description": "You must be really bored. Huh?",
-                "icon": "Eating_boxchan.png",
+                "icon": "Gurume_Hako.webp",
                 "action": "back"
             }
         }
