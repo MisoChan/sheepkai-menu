@@ -4,7 +4,7 @@
 .site_name {
   text-align: center;
   font-weight: 900;
-  margin: 1em;
+  margin: 0.5em 1em 1em 1em;
   padding: 0 0 10px 0;
   border-bottom: 4px solid;
   border-color: color_variables.$border_color;
@@ -93,6 +93,6 @@
   }
   .site_name {
     text-align: center;
-    font-size: 35px;
+    font-size: 32px;
   }
 }
