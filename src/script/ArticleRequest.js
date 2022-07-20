@@ -66,6 +66,9 @@ export class ArticleRequest {
       params: parameter,
       signal: controller.signal,
     });
+    if (resultData.data.status !== "SUCCESS") {
+      throw resultData.data.status;
+    }
     return resultData.data;
   }
   //記事リストの取得を行う
@@ -75,6 +78,9 @@ export class ArticleRequest {
       params: parameter,
       signal: controller.signal,
     });
+    if (resultData.data.status !== "SUCCESS") {
+      throw resultData.data.status;
+    }
     return resultData.data;
   }
   cancelRequest() {
