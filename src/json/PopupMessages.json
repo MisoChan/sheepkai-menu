@@ -1,7 +1,7 @@
 {
     "jp":{
         "POPUP":{
-            "NOT_FOUND": {
+            "NOT_FOUND": { 
                 "title": "記事がありません。",
                 "description": "URLを再度ご確認ください。",
                 "icon": "Eating_boxchan.webp",
@@ -78,6 +78,12 @@
             "title": "Now loading...",
             "description": "Wait a minutes...",
             "icon": "Eating_boxchan.webp"
+            },
+            "NOT_FOUND": {
+                "title": "Article data not found.",
+                "description": "Please look at the URL.",
+                "icon": "Eating_boxchan.webp",
+                "action": "back"
             },
             "ERROR_FAILED": {
                 "title": "Connection failed.",
