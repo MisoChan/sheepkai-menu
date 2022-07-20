@@ -1,6 +1,12 @@
 {
     "jp":{
         "POPUP":{
+            "NOT_FOUND": {
+                "title": "記事がありません。",
+                "description": "URLを再度ご確認ください。",
+                "icon": "Eating_boxchan.webp",
+                "action": "back"
+            },
             "ERROR_FAILED": {
                 "title": "通信に失敗しました。",
                 "description": "ネット環境をご確認の上、今一度お試しください。",

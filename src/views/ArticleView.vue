@@ -128,7 +128,7 @@ export default {
         this.$store.commit("setPageTitle", this.article_property.article_title);
         this.pageLoaded = true;
       } catch (exception) {
-        this.$refs.popup.openModal("ERROR_FAILED");
+        this.$refs.popup.openModal(exception);
       }
     },
   },

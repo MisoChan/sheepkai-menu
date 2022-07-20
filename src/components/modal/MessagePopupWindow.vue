@@ -51,17 +51,9 @@ export default {
       const message =
         ModalMessages[language] ??
         ModalMessages[process.env.VUE_APP_DEFAULT_LANGUAGE];
-      this.messageProperty = message["POPUP"][messageId];
+      this.messageProperty =
+        message["POPUP"][messageId] ?? message["POPUP"]["ERROR_FAILED"];
       this.showModal = true;
-    },
-    executeReload() {
-      this.$router.go({
-        path: this.$router.currentRoute.path,
-        force: true,
-      });
-    },
-    executeBack() {
-      this.$router.go(-1);
     },
     onClick() {
       const actions = {
