@@ -4,7 +4,7 @@
       :articleInformation="this.article_property"
     ></ArticleListView>
     <div id="portfolio_picture_wrapper">
-      <img src="/icons/PORTFOLIO.png" id="portfolio_top_picture" />
+      <img src="/icons/PORTFOLIO.webp" id="portfolio_top_picture" />
     </div>
     <ModalMessage ref="popup"></ModalMessage>
   </div>
