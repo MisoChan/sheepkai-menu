@@ -29,7 +29,7 @@
 .article_list_content_box {
   box-shadow: 2px 2px 5px 0 color_variables.$main_color_activated;
   margin: 20px 10px 10px 10px;
-  background-color: color_variables.$article_body_background_color;
+  background-color: color_variables.$article_list_background_color;
   display: grid;
   grid-template-columns: 15px 4fr 1fr;
   grid-template-rows: 5fr 1fr;

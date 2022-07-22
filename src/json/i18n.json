@@ -1,7 +1,13 @@
 {
     "ja":{
         "Common": {
-            "sitename": "羊飼いさんとお道具箱の部屋"
+            "sitename": "羊飼いさんとお道具箱の部屋",
+            "loading": "ロード中…",
+            "loading_subtitle": "データ受信中…"
+        },
+        "MessageAction":{
+            "reload":"再読込",
+            "back": "戻る"
         },
         "FunctionProperty": {
             "MENU":{
@@ -54,7 +60,12 @@
     },
     "en":{
         "Common": {
-            "sitename": "Sheepkai and toolboxes Room"
+            "sitename": "Sheepkai and toolbox Room",
+            "loading": "Loading…"
+        },
+        "MessageAction":{
+            "reload":"Reload",
+            "back": "Back"
         },
         "FunctionProperty": {
             "MENU":{

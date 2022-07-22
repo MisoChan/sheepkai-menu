@@ -1,9 +1,35 @@
 {
-    "JP":{
-        "SUCCESS":{
+    "jp":{
+        "POPUP":{
+            "NOT_FOUND": { 
+                "title": "記事がありません。",
+                "description": "URLを再度ご確認ください。",
+                "icon": "Eating_boxchan.webp",
+                "action": "back"
+            },
+            "ERROR_FAILED": {
+                "title": "通信に失敗しました。",
+                "description": "ネット環境をご確認の上、今一度お試しください。",
+                "icon": "Eating_boxchan.webp",
+                "action": "reload"
+            },
+            "ACCESS_DENIED":{
+                "title": "リンク先はご利用できません。",
+                "description": "またのアクセスをお待ちしております。",
+                "icon": "Gurume_Hako.webp",
+                "action": "back"
+            },
+            "ERROR_BLACK_COMPANY":{
+                "title": "ところで…",
+                "description": "暇なの？",
+                "icon": "Gurume_Hako.webp",
+                "action": "back"
+            }
+        },
+        "SUCCESS_SEND":{
             "title": "送信完了！",
             "description": "メッセージをありがとうございます。",
-            "icon": "Eating_boxchan.png"
+            "icon": "Eating_boxchan.webp"
         },
         "SUCCESS_TWISE":{
             "title": "送信完了...",
@@ -16,35 +42,67 @@
             "icon": "Eating_boxchan_error.png"
         },
         "ERROR_FAILED": {
-            "title": "登録に失敗しました。",
+            "title": "通信に失敗しました。",
             "description": "通信エラーが発生しました。数分時間をおいた上で、今一度お試しください。",
-            "icon": "Eating_boxchan.png"
+            "icon": "Eating_boxchan.webp"
         },
         "ERROR_RECAPTCHA_FAILED":{
             "title": "reCAPTCHAエラーです。",
             "description": "ページリロードの上、数分置いたあともう一度送信してみるか、人間さんに送信を変わってもらってください。",
-            "icon": "Eating_boxchan.png"
+            "icon": "Eating_boxchan.webp"
         },
         "ERROR_SINGLE_AAAAAA":{
             "title": "あ。",
             "description": "あああああああ、ああああ、’あ’ああああああああああ。\nあ。",
-            "icon": "Eating_boxchan.png"
+            "icon": "Eating_boxchan.webp"
         },
         "ERROR_SINGLE_STRING":{
             "title": "あの…",
             "description": "いろいろと試そうとしてますね？ デバッガーの素質ありです。\n でも、このサイトではご遠慮ください。",
-            "icon": "Eating_boxchan.png"
+            "icon": "Eating_boxchan.webp"
         },
         "ERROR_BLACK_COMPANY":{
             "title": "ブラック企業からのアクセスを遮断しました。",
             "description": "人格否定と成果の横取りを行うクズ人間とは関わりたくないため、アクセスが拒否されました。反省しろ。",
-            "icon": "Eating_boxchan.png"
+            "icon": "Eating_boxchan.webp"
         },
         "ERROR_NG_WORD":{
             "title": "NGワードを検知しました",
             "description": "NGワードが含まれています。表現を変えてもう一度おためしください。",
-            "icon": "Eating_boxchan.png"
+            "icon": "Eating_boxchan.webp"
+        }
+    },
+    "en":{
+        "POPUP":{
+            "LOADING": {
+            "title": "Now loading...",
+            "description": "Wait a minutes...",
+            "icon": "Eating_boxchan.webp"
+            },
+            "NOT_FOUND": {
+                "title": "Article data not found.",
+                "description": "Please look at the URL.",
+                "icon": "Eating_boxchan.webp",
+                "action": "back"
+            },
+            "ERROR_FAILED": {
+                "title": "Connection failed.",
+                "description": "Please check your internet connection.",
+                "icon": "Eating_boxchan.webp",
+                "action": "reload"
+            },
+            "ACCESS_DENIED":{
+                "title": "This page is unavailable.",
+                "description": "",
+                "icon": "Gurume_Hako.webp",
+                "action": "back"
+            },
+            "ERROR_BLACK_COMPANY":{
+                "title": "By the way...",
+                "description": "You must be really bored. Huh?",
+                "icon": "Gurume_Hako.webp",
+                "action": "back"
+            }
         }
     }
-    
 }
