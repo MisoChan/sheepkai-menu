@@ -7,6 +7,7 @@
 }
 
 .md_header_text {
+  word-wrap: break-word;
   overflow-wrap: break-word;
   word-break: keep-all;
   text-decoration: underline;
