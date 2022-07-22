@@ -65,7 +65,7 @@ $buttom_image_size: 64px;
 @include mixin.media(pc) {
   #article_view_wrapper {
     grid-template-columns: 280px 1fr;
-    grid-template-rows: 150px 135px 1fr;
+    grid-template-rows: 150px 205px 1fr;
   }
   .article_top_information {
     grid-row: 2/2;
