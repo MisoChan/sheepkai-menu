@@ -3,7 +3,7 @@
 
 @include mixin.media(sp) {
   .article_list_content_box {
-    height: 80px;
+    min-height: 110px;
   }
   .article_title {
     font-size: 26px;
@@ -11,7 +11,7 @@
 }
 @include mixin.media(tab) {
   .article_list_content_box {
-    height: 110px;
+    min-height: 110px;
   }
   .article_title {
     font-size: 30px;
@@ -31,7 +31,7 @@
   margin: 20px 10px 10px 10px;
   background-color: color_variables.$article_list_background_color;
   display: grid;
-  grid-template-columns: 15px 4fr 1fr;
+  grid-template-columns: 15px 5fr 1fr;
   grid-template-rows: 5fr 1fr;
   &:active {
     box-shadow: none;
