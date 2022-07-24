@@ -75,12 +75,8 @@
 }
 
 @include mixin.media(tab) {
-  > :deep ul {
-    list-style-position: inside;
-  }
+
 }
 @include mixin.media(pc) {
-  > :deep ul {
-    list-style-position: inside;
-  }
+
 }
