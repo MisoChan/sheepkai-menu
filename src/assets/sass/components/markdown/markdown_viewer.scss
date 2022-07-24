@@ -37,6 +37,9 @@
       padding-left: 1em;
     }
   }
+  > :deep a {
+    word-wrap: break-word;
+  }
   > :deep ol {
     list-style-position: inside;
     & p:nth-child(1) {
