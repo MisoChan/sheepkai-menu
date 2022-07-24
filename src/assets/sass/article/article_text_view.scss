@@ -21,6 +21,7 @@
 }
 #article_body {
   border: dotted 1px;
+  overflow: hidden;
   border-color: color_variables.$article_border_color;
   background-color: color_variables.$article_body_background_color;
 }
