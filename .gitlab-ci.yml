@@ -52,5 +52,5 @@ deploy-job:      # This job runs in the deploy stage.
     - rm -rf ./.git
     - sshpass ssh runner@20.0.0.12 "rm -rf /home/runner/sheepkai-menu-frontend"
     - sshpass scp -v -r `pwd` runner@20.0.0.12:/home/runner/sheepkai-menu-frontend
-    - sshpass ssh runner@20.0.0.12 "bash /home/runner/sheepkai-menu-frontend/scripts/build_sheepkainet.sh $CI_BUILD_REF_NAME "release"  64080 "
-
+    - sshpass ssh runner@20.0.0.12 "bash /home/runner/sheepkai-menu-frontend/scripts/build_sheepkainet.sh $CI_BUILD_REF_NAME "release"  64080"
+    - bash /scripts/cloudflare_cache_purge.sh
