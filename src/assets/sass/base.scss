@@ -40,6 +40,7 @@ body {
   margin: 0;
 }
 a {
+  word-wrap: break-word;
   color: color_variables.$base_linkcolor;
 }
 
