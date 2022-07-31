@@ -2,6 +2,73 @@
 @use "../mixin.scss" as mixin;
 
 $buttom_image_size: 64px;
+
+#article_view_wrapper {
+  min-height: 95vh;
+  background-color: color_variables.$article_background_color;
+  display: grid;
+}
+#article_title {
+  color: color_variables.$article_pagetitle_textcolor;
+  font-size: 30px;
+}
+#article_top_wrapper {
+  padding: 1em;
+  height: 100%;
+  display: grid;
+}
+.article_top_information {
+  font-size: 12px;
+}
+#article_view {
+  display: grid;
+  grid-template-columns: 4fr 200px;
+  grid-template-rows: 1fr;
+  color: color_variables.$base_textcolor;
+  padding: 1em;
+}
+
+#article_border {
+  padding: 0px 1em 0px 1em;
+  background-color: color_variables.$article_header_border;
+}
+#article_border_links {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(1fr, 5);
+  grid-template-rows: 9fr 1fr;
+  > hr {
+    grid-column: 1/6;
+    grid-row: 2/2;
+    height: 1px;
+    width: 100%;
+    margin: 4px 0 0px 0;
+  }
+  > .border_link {
+    grid-row: 1/1;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    margin: 0 auto;
+
+    > a {
+      color: color_variables.$white_textcolor;
+    }
+  }
+}
+
+.border_button_img {
+  max-width: $buttom_image_size;
+}
+
+.chotto_small {
+  height: calc($buttom_image_size * 0.75);
+}
+.border_last {
+  grid-column: 5/5;
+}
+
 @include mixin.media(sp) {
   #article_view_wrapper {
     grid-template-columns: 4fr 1fr;
@@ -90,69 +157,4 @@ $buttom_image_size: 64px;
     background-color: color_variables.$article_header_border;
     height: 100%;
   }
-}
-#article_view_wrapper {
-  min-height: 95vh;
-  background-color: color_variables.$article_background_color;
-  display: grid;
-}
-#article_title {
-  color: color_variables.$article_pagetitle_textcolor;
-  font-size: 30px;
-}
-#article_top_wrapper {
-  padding: 1em;
-  height: 100%;
-  display: grid;
-}
-.article_top_information {
-  font-size: 12px;
-}
-#article_view {
-  display: grid;
-  grid-template-columns: 4fr 200px;
-  grid-template-rows: 1fr;
-  color: color_variables.$base_textcolor;
-  padding: 1em;
-}
-
-#article_border {
-  padding: 0px 1em 0px 1em;
-  background-color: color_variables.$article_header_border;
-}
-#article_border_links {
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(1fr, 5);
-  grid-template-rows: 9fr 1fr;
-  > hr {
-    grid-column: 1/6;
-    grid-row: 2/2;
-    height: 1px;
-    width: 100%;
-    margin: 4px 0 0px 0;
-  }
-  > .border_link {
-    grid-row: 1/1;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    text-align: center;
-    margin: 0 auto;
-
-    > a {
-      color: color_variables.$white_textcolor;
-    }
-  }
-}
-
-.border_button_img {
-  max-width: $buttom_image_size;
-}
-
-.chotto_small {
-  height: calc($buttom_image_size * 0.75);
-}
-.border_last {
-  grid-column: 5/5;
 }
