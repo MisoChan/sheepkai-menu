@@ -1,11 +1,21 @@
 @use "../commons/color_variables.scss" as color_variables;
 @use "../mixin.scss" as mixin;
 
+#contact_view_wrapper {
+  margin: 10px 0 0 0;
+  display: grid;
+  background-color: color_variables.$contact_background_color;
+}
+
+#contact_image {
+  max-width: 100%;
+}
+
 @include mixin.media(sp) {
   #contact_view_wrapper {
     min-height: 500px;
     min-width: 365px;
-    padding-bottom:10px;
+    padding-bottom: 10px;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
   }
@@ -109,13 +119,4 @@
   }
 }
 @include mixin.media(widepc) {
-}
-#contact_view_wrapper {
-  margin: 10px 0 0 0;
-  display: grid;
-  background-color: color_variables.$contact_background_color;
-}
-
-#contact_image {
-  max-width: 100%;
 }

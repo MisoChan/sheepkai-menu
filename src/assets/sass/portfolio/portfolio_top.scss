@@ -1,18 +1,5 @@
 @use "../commons/color_variables.scss" as color_variables;
 @use "../mixin.scss" as mixin;
-@include mixin.media(sp) {
-}
-@include mixin.media(tab) {
-}
-@include mixin.media(pc) {
-}
-@include mixin.media(widepc) {
-  #portfolio_top_view_wrapper {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 0.7fr 1fr;
-  }
-}
 #portfolio_top_view_wrapper {
   min-height: 95vh;
   background-color: color_variables.$article_background_color;
@@ -27,4 +14,18 @@
   object-fit: contain;
   max-width: 1240px;
   width: 100%;
+}
+
+@include mixin.media(sp) {
+}
+@include mixin.media(tab) {
+}
+@include mixin.media(pc) {
+}
+@include mixin.media(widepc) {
+  #portfolio_top_view_wrapper {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 0.7fr 1fr;
+  }
 }
