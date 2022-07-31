@@ -1,6 +1,17 @@
 @use "../commons/color_variables.scss" as color_variables;
 @use "../mixin.scss" as mixin;
 
+#article_body {
+  border: dotted 1px;
+  overflow: hidden;
+  border-color: color_variables.$article_border_color;
+  background-color: color_variables.$article_body_background_color;
+}
+#article_side_menu {
+  padding: 0.5em;
+  position: fixed;
+}
+
 @include mixin.media(sp) {
   #article_side_menu {
     display: none;
@@ -18,14 +29,4 @@
   #article_side_menu {
     max-width: 220px;
   }
-}
-#article_body {
-  border: dotted 1px;
-  overflow: hidden;
-  border-color: color_variables.$article_border_color;
-  background-color: color_variables.$article_body_background_color;
-}
-#article_side_menu {
-  padding: 0.5em;
-  position: fixed;
 }
