@@ -1,4 +1,11 @@
 @use "../mixin.scss" as mixin;
+#contents_viewer {
+  min-height: 90%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
 @include mixin.media(sp) {
   #contents_viewer {
     width: 100%;
@@ -18,10 +25,4 @@
   #contents_viewer {
     width: 1500px;
   }
-}
-#contents_viewer {
-  min-height: 90%;
-  left: 0;
-  right: 0;
-  margin: auto;
 }
