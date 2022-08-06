@@ -91,16 +91,17 @@ export default {
     async onLoad() {
       this.pageLoaded = false;
 
-      const request = new ArticleRequest(window.location.search);
-      // 早期リターン：UNKNOWNだった場合は即Returnして処理を終了する
-      if (request.judgeArticleRequestType() === "UNKNOWN") {
-        return null;
-      }
+      const request = await new ArticleRequest(window.location.search);
+
       // 記事ページかどうかを判定
-      this.is_articlepage =
-        (await request.judgeArticleRequestType()) === "ARTICLE_DATA";
-      // TRUE：記事ページ、FALSE：記事一覧取得ルーチン実行
       try {
+        // 早期リターン：UNKNOWNだった場合は即Returnして処理を終了する
+        if (request.judgeArticleRequestType() === "UNKNOWN") {
+          return null;
+        }
+        this.is_articlepage =
+          (await request.judgeArticleRequestType()) === "ARTICLE_DATA";
+        // TRUE：記事ページ、FALSE：記事一覧取得ルーチン実行
         this.$refs.popup.closeModal();
         if (this.is_articlepage) {
           this.article_property = await request.getArticleAsync();
