@@ -38,7 +38,9 @@ export default {
   data: function () {
     return {
       showModal: false,
-      messageProperty: {},
+      messageProperty: {
+        icon: "",
+      },
     };
   },
   methods: {

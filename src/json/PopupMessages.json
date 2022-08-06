@@ -13,6 +13,12 @@
                 "icon": "Eating_boxchan.webp",
                 "action": "reload"
             },
+            "INVALID_VALUES":{
+                "title": "あなたは同業者ですか？",
+                "description": "デバッグお疲れ様です！",
+                "icon": "Gurume_Hako.webp",
+                "action": "back"
+            },
             "ACCESS_DENIED":{
                 "title": "リンク先はご利用できません。",
                 "description": "またのアクセスをお待ちしております。",
@@ -83,6 +89,12 @@
                 "title": "Article data not found.",
                 "description": "Please look at the URL.",
                 "icon": "Eating_boxchan.webp",
+                "action": "back"
+            },
+            "INVALID_VALUES":{
+                "title": "Oh, are you a software developer?",
+                "description": "Nice work!",
+                "icon": "Gurume_Hako.webp",
                 "action": "back"
             },
             "ERROR_FAILED": {
