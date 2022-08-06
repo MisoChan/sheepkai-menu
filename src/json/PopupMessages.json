@@ -13,7 +13,7 @@
                 "icon": "Eating_boxchan.webp",
                 "action": "reload"
             },
-            "INVALID_VALUE":{
+            "INVALID_VALUES":{
                 "title": "あなたは同業者ですか？",
                 "description": "デバッグお疲れ様です！",
                 "icon": "Gurume_Hako.webp",
@@ -91,7 +91,7 @@
                 "icon": "Eating_boxchan.webp",
                 "action": "back"
             },
-            "INVALID_VALUE":{
+            "INVALID_VALUES":{
                 "title": "Oh, are you a software developer?",
                 "description": "Nice work!",
                 "icon": "Gurume_Hako.webp",
