@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "01FLOPDESIGN", Regular;
-  src: url("~@/assets/fonts/FLOPDesignFont.ttf") format("truetype");
+  src: url("~@/assets/font/FLOPDesignFont.ttf") format("truetype");
 }
 
 input[type="text"] {
@@ -35,10 +35,12 @@ html {
 div {
   box-sizing: border-box;
 }
+
 body {
   height: 100vh;
   margin: 0;
 }
+
 a {
   word-wrap: break-word;
   color: color_variables.$base_linkcolor;
@@ -50,6 +52,7 @@ a {
   padding: 0;
   height: calc(100%);
 }
+
 #bg_img {
   height: 100%;
   background: color_variables.$background_color;
@@ -60,9 +63,11 @@ a {
   background-position: center;
 }
 
-body > #bg_img {
-  height: auto; /* 要素を超えた分の背景が伸びないブラウザ用 */
+body>#bg_img {
+  height: auto;
+  /* 要素を超えた分の背景が伸びないブラウザ用 */
 }
+
 .btn_standard {
   border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -73,6 +78,7 @@ body > #bg_img {
   color: color_variables.$white_textcolor;
   border: none;
   box-shadow: 2px 2px 4px color_variables.$shadow_color_standard;
+
   &:active {
     background-color: color_variables.$main_color_activated;
     box-shadow: none;
@@ -93,6 +99,7 @@ body > #bg_img {
   color: color_variables.$white_textcolor;
   border: none;
   box-shadow: 2px 2px 4px color_variables.$shadow_color_standard;
+
   &:active {
     background-color: color_variables.$accent_color_red_activated;
     box-shadow: none;
