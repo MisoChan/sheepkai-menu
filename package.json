@@ -19,7 +19,9 @@
     "vue-axios": "^3.4.1",
     "vue-router": "^4.0.3",
     "vue3-markdown-loader": "^1.1.5",
-    "vuex": "^4.0.0"
+    "vuex": "^4.0.0",
+    "webpack-manifest-plugin": "^5.0.0",
+    "webpack-node-externals": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
