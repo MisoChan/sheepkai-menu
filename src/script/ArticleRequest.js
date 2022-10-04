@@ -2,9 +2,9 @@ import { axiosApp } from "@/script/settings/AxiosSettings.js";
 let controller = new AbortController();
 export class ArticleRequest {
   constructor(url) {
+    this.url = url;
     // パラメタURL
     this.searchURLParameter = new URLSearchParams(url);
-
     //リクエストパラメタ名称
     this.REQUEST_PARAMETERS = {
       FUNCTION_CD: "function_cd",
@@ -14,22 +14,26 @@ export class ArticleRequest {
     // パラメタ数（今回は両方とも同じ）
     this.REQUEST_PARAMETERS_MAX = 3;
 
-    this.urlRequestType = this.judgeArticleRequestType();
-
     this.axios = axiosApp;
   }
 
   // 記事リストか記事単体取得か、それ以外かを判定する
   // ページ番号のパラメータがURLにあるならARTICLE_LIST_DATA、そうでないなら記事単体取得としてARTICLE_DATAを返す
   judgeArticleRequestType() {
+    //URLパラメータがない場合はそもそもお門違いとして返却
+    if (!this.url) {
+      return "UNKNOWN";
+    }
     // 今回は機能CDと記事URLとページNoで判定。
     // 機能CDがない or パラメータがREQUEST_PARAMETERS_MAX以上ある→ タイプエラー。
+
     if (
+      (Array.from(this.searchURLParameter).length === 0) |
       !this.searchURLParameter.has(this.REQUEST_PARAMETERS.FUNCTION_CD) |
       (Array.from(this.searchURLParameter).length ===
         this.REQUEST_PARAMETERS_MAX)
     ) {
-      return "UNKNOWN";
+      throw { response: { data: { status: "INVALID_VALUES" } } };
     }
     // ページ番号のパラメータがURLにあるならARTICLE_LIST_DATA、そうでないなら記事単体取得としてARTICLE_DATAを返す
     return this.searchURLParameter.has(this.REQUEST_PARAMETERS.PAGE_NO)

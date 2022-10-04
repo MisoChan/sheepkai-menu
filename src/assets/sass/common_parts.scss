@@ -1,0 +1,12 @@
+@use "commons/color_variables.scss" as color_variables;
+
+.button_normal {
+  background-color: color_variables.$accent_color_normal;
+  color: color_variables.$white_textcolor;
+  box-shadow: 2px 2px 5px 0 color_variables.$main_color_activated;
+  padding: 0.7em 2em 0.7em 2em;
+  &:active {
+    box-shadow: none;
+    transform: translateY(2px);
+  }
+}

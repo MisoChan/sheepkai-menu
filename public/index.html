@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
+  <head prefix="og: https://ogp.me/ns#">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <meta name=robots content=”noindex,nofollow”>
+    <meta property="og:url" content=”www.sheepkai.net”>
+    <meta property="og:site_name" content=”羊飼いとお道具箱の部屋”>
+    <meta property="og:title" content=”羊飼いとお道具箱の部屋”>
+    <meta name=description content=”趣味5000%の個人サイトです。”>
+    <meta property="og:description" content=”趣味5000%の個人サイトです。”>
+    <meta property="og:type" content=”website” />
+    <meta property="og:image" content="https://www.sheepkai.net/banner/OGP.png" />
+    <meta name="twitter:site" content="@launchpersimmon">
+    <meta name="twitter:card" content="summary_large_image">
     <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
+</head> 
   <body>
-    <noscript>
+  <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
-  <script src="https://www.google.com/recaptcha/api.js"></script>
 </html>
