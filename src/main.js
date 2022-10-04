@@ -1,4 +1,4 @@
-import { createApp } from "vue";
+import { createSSRApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
@@ -16,7 +16,7 @@ require("@/assets/sass/common_parts.scss");
 const sanitizeOptions = {};
 const locale =
   window.navigator.language ?? process.env.VUE_APP_DEFAULT_LANGUAGE;
-const vm = createApp(App)
+const vm = createSSRApp(App)
   .use(VueAxios, axiosApp)
   .use(VueSanitize, sanitizeOptions)
   .use(store)
