@@ -16,7 +16,7 @@ export default {
       "%cデバッグお疲れ様でございます",
       "font-size: 24px;color: #FFF;background-color: #74978a"
     );
-    console.info("%cここは一つ、お茶でもどうぞ → っ旦 ", "font-siSze: 18px;");
+    console.info("%cここは一つ、お茶でもどうぞ → っ旦 ", "font-size: 18px;");
     console.info("-----By NanoShiki @launchpersimmon -----");
   },
   methods: {
