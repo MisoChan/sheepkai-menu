@@ -6,10 +6,18 @@
 <style lang="scss" scoped src="@/assets/sass/nomalize.scss"></style>
 <script>
 import { MetatagController } from "@/script/MetaTagController.js";
+
 export default {
   mounted: function () {
     var routeInstance = this.$route;
     this.createTitleDesc(routeInstance);
+
+    console.info(
+      "%cデバッグお疲れ様でございます",
+      "font-size: 24px;color: #FFF;background-color: #74978a"
+    );
+    console.info("%cここは一つ、お茶でもどうぞ → っ旦 ", "font-siSze: 18px;");
+    console.info("-----By NanoShiki @launchpersimmon -----");
   },
   methods: {
     setMetaTag: function (property) {
