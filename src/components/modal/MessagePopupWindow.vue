@@ -48,13 +48,15 @@ export default {
       this.showModal = false;
     },
     openModal(messageId) {
-      // 今の所日本語しか対応してません！
       const language = this.$store.getters.getLanguage;
       const message =
         ModalMessages[language] ??
         ModalMessages[process.env.VUE_APP_DEFAULT_LANGUAGE];
+
+      const show_message_identifier = !messageId ? "ERROR_FAILED" : messageId;
       this.messageProperty =
-        message["POPUP"][messageId] ?? message["POPUP"]["ERROR_FAILED"];
+        message["POPUP"][show_message_identifier] ??
+        message["POPUP"]["ERROR_FAILED"];
       this.showModal = true;
     },
     onClick() {

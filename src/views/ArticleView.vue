@@ -99,7 +99,7 @@ export default {
         if (request.judgeArticleRequestType() === "UNKNOWN") {
           return null;
         }
-        this.is_articlepage =
+          this.is_articlepage =
           (await request.judgeArticleRequestType()) === "ARTICLE_DATA";
         // TRUE：記事ページ、FALSE：記事一覧取得ルーチン実行
         this.$refs.popup.closeModal();
@@ -129,7 +129,10 @@ export default {
         this.$store.commit("setPageTitle", this.article_property.article_title);
         this.pageLoaded = true;
       } catch (exception) {
-        this.$refs.popup.openModal(exception.response.data.status);
+        const error_code = !exception.response.data
+          ? "ERR_NETWORK"
+          : exception.response.data.status;
+        this.$refs.popup.openModal(error_code);
       }
     },
   },
