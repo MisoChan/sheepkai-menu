@@ -99,7 +99,7 @@ export default {
         if (request.judgeArticleRequestType() === "UNKNOWN") {
           return null;
         }
-          this.is_articlepage =
+        this.is_articlepage =
           (await request.judgeArticleRequestType()) === "ARTICLE_DATA";
         // TRUE：記事ページ、FALSE：記事一覧取得ルーチン実行
         this.$refs.popup.closeModal();
