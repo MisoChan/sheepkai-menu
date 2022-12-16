@@ -1,11 +1,8 @@
 # ビルド環境
 FROM node:lts-alpine as build-stage
 WORKDIR /app
-COPY package*.json ./
-RUN rm -rf ./node_modules ./package-lock.json;npm install;
 COPY . .
-RUN npm run lint;
-RUN npm run build --mode $BUILDMODE;
+RUN rm -rf ./node_modules ./package-lock.json;npm install;npm run lint;npm run build --mode $BUILDMODE;
 
 # 環境構築
 FROM nginx:alpine-slim as deploy-stage
