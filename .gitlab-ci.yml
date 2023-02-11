@@ -32,25 +32,17 @@ ci-development-job:
   - ci-working
   script:
     - bash scripts/build_sheepkainet.sh $CI_BUILD_REF_NAME "develop" "61080"
-
-stage-deploy-job:
-  stage: stage-deploy
-  only:
-  - stage
-  script:
-    - rm -rf ./.git
-    - sshpass ssh runner@20.0.0.12 "rm -rf /home/runner/sheepkai-menu-frontend-stage"
-    - sshpass scp -v -r `pwd` runner@20.0.0.12:/home/runner/sheepkai-menu-frontend-stage
-    - sshpass ssh runner@20.0.0.12 "bash /home/runner/sheepkai-menu-frontend-stage/scripts/build_sheepkainet.sh $CI_BUILD_REF_NAME "stage" 62080 "
-
-
+    
 deploy-job:      # This job runs in the deploy stage.
   stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
   only:
+  - stage
   - deploy
   script:
     - rm -rf ./.git
-    - sshpass ssh runner@20.0.0.12 "rm -rf /home/runner/sheepkai-menu-frontend"
-    - sshpass scp -v -r `pwd` runner@20.0.0.12:/home/runner/sheepkai-menu-frontend
-    - sshpass ssh runner@20.0.0.12 "bash /home/runner/sheepkai-menu-frontend/scripts/build_sheepkainet.sh $CI_BUILD_REF_NAME "release"  64080"
+    - sh /scripts/docker_login.sh
+    - docker build  --no-cache --force-rm=true --target deploy-stage -t sheepkai-menu-front:${CI_BUILD_REF_NAME} ./
+    - docker tag sheepkai-menu-front:${CI_BUILD_REF_NAME} registry.sheepkai.net:5000/sheepkainet/sheepkai-menu-front:${CI_BUILD_REF_NAME}
+    - docker push registry.sheepkai.net:5000/sheepkainet/sheepkai-menu-front:${CI_BUILD_REF_NAME}
+    - sh /scripts/reflesh_cpane.sh sheepkai-menu-deploy-${CI_BUILD_REF_NAME}
     - bash /scripts/cloudflare_cache_purge.sh
