@@ -7,6 +7,12 @@
                 "icon": "Eating_boxchan.webp",
                 "action": "back"
             },
+            "ERR_NETWORK": {
+                "title": "通信に失敗しました。",
+                "description": "サーバーエラーです。時間を置いてお試しください。",
+                "icon": "Eating_boxchan.webp",
+                "action": "reload"
+            },
             "ERROR_FAILED": {
                 "title": "通信に失敗しました。",
                 "description": "ネット環境をご確認の上、今一度お試しください。",

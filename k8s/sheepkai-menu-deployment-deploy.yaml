@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sheepkai-menu-deploy
+  labels:
+    app: sheepkai-menu-prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sheepkai-menu-prod
+  template:
+    metadata:
+      labels:
+        app: sheepkai-menu-prod
+    spec:
+      containers:
+        - imagePullPolicy: Always
+          name: sheepkai-menu-prod
+          image: registry.sheepkai.net:5000/sheepkainet/sheepkai-menu-front:deploy
+          ports:
+            - containerPort: 80
+      imagePullSecrets:
+        - name: registrypullsecret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sheepkai-menu-prod-service
+spec:
+  type: LoadBalancer
+  loadBalancerIP: 20.10.11.110
+  ports:
+    - protocol: "TCP"
+      port: 80
+      targetPort: 80
+  selector:
+    app: sheepkai-menu-prod
+---
