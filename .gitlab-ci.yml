@@ -22,7 +22,7 @@ stages: # List of stages for jobs, and their order of execution
 job-init-environment:
   stage: initialize
   script:
-    - cp .env.branch-$CI_BUILD_REF_NAME ".env.production"
+    - cp .env.branch-${CI_BUILD_REF_NAME} ".env.production"
 
 ci-development-job:
   stage: develop-deploy
@@ -30,7 +30,7 @@ ci-development-job:
     - develop
     - ci-working
   script:
-    - cp ".env.branch-develop" ".env.production"
+    - cp .env.branch-develop ".env.production"
     - bash scripts/build_sheepkainet.sh $CI_BUILD_REF_NAME "develop" "61080"
 
 deploy-production-job: # This job runs in the deploy stage.
