@@ -19,11 +19,6 @@ stages: # List of stages for jobs, and their order of execution
   - stage-deploy
   - deploy
 
-job-init-environment:
-  stage: initialize
-  script:
-    - cp .env.branch-${CI_BUILD_REF_NAME} ".env.production"
-
 ci-development-job:
   stage: develop-deploy
   only:
