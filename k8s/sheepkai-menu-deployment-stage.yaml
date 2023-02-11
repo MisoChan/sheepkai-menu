@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sheepkai-menu-stage
+  name: sheepkai-menu-front-stage
   labels:
     app: sheepkai-menu-stg
 spec:
@@ -37,3 +37,4 @@ spec:
   selector:
     app: sheepkai-menu-stg
 ---
+

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sheepkai-menu-deploy
+  name: sheepkai-menu-front-deploy
   labels:
     app: sheepkai-menu-prod
 spec:
@@ -37,3 +37,4 @@ spec:
   selector:
     app: sheepkai-menu-prod
 ---
+
