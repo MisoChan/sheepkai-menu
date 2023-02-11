@@ -44,4 +44,5 @@ deploy-job:      # This job runs in the deploy stage.
     - docker build  --no-cache --force-rm=true --target deploy-stage -t sheepkai-menu-front:${CI_BUILD_REF_NAME} ./
     - docker tag sheepkai-menu-front:${CI_BUILD_REF_NAME} registry.sheepkai.net:5000/sheepkainet/sheepkai-menu-front:${CI_BUILD_REF_NAME}
     - docker push registry.sheepkai.net:5000/sheepkainet/sheepkai-menu-front:${CI_BUILD_REF_NAME}
+    - sh /scripts/reflesh_cpane.sh sheepkai-menu-deploy-${CI_BUILD_REF_NAME}
     - bash /scripts/cloudflare_cache_purge.sh
