@@ -20,6 +20,13 @@ spec:
           image: registry.sheepkai.net:5000/sheepkainet/sheepkai-menu-front:stage
           ports:
             - containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 5
       imagePullSecrets:
         - name: registrypullsecret
 ---
