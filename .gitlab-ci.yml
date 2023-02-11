@@ -22,7 +22,7 @@ stages: # List of stages for jobs, and their order of execution
 job-init-environment:
   stage: initialize
   script:
-    - cp ".env.branch-"$CI_BUILD_REF_NAME ".env.production"
+    - cp .env.branch-$CI_BUILD_REF_NAME ".env.production"
 
 ci-development-job:
   stage: develop-deploy
@@ -40,7 +40,7 @@ deploy-production-job: # This job runs in the deploy stage.
     - deploy
   script:
     - rm -rf ./.git
-    - cat ".env.branch-"$CI_BUILD_REF_NAME
+    - cat .env.branch-${CI_BUILD_REF_NAME}
     - sh /scripts/docker_login.sh
     - docker build  --no-cache --force-rm=true --target deploy-stage -t sheepkai-menu-front:${CI_BUILD_REF_NAME} ./
     - docker tag sheepkai-menu-front:${CI_BUILD_REF_NAME} registry.sheepkai.net:5000/sheepkainet/sheepkai-menu-front:${CI_BUILD_REF_NAME}
