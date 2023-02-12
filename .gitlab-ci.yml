@@ -26,3 +26,4 @@ deploy-production-job: # This job runs in the deploy stage.
     - docker push registry.sheepkai.net:5000/sheepkainet/sheepkai-menu-front:${CI_BUILD_REF_NAME}
     - sh /scripts/reflesh_cpane.sh sheepkai-menu-front-${CI_BUILD_REF_NAME} sheepkainet-${CI_BUILD_REF_NAME} 
     - bash /scripts/cloudflare_cache_purge.sh
+    - docker image prune -f
