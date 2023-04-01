@@ -2,7 +2,11 @@
   <button @click="onClick()">
     <div class="menu_contents">
       <div class="menu_icon_frame">
-        <img class="menu_icon_img" :src="item.imagesrc" />
+        <img
+          class="menu_icon_img"
+          :src="item.imagesrc"
+          style="width: 120px; height: 120px"
+        />
       </div>
       <div class="menu_contents_name">
         {{ item.contents_title }}
