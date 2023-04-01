@@ -16,13 +16,14 @@ deploy-production-job: # This job runs in the deploy stage.
   stage: deploy # It only runs when *both* jobs in the test stage complete successfully.
   only:
     - stage
-    - deploy
+    - production
   script:
     - rm -rf ./.git
     - cp .env.branch-${CI_BUILD_REF_NAME} ".env.production"
-    - docker build  --no-cache --force-rm=true --target deploy-stage -t sheepkai-menu-front:${CI_BUILD_REF_NAME} ./
+    - docker build  --no-cache --force-rm=true -t sheepkai-menu-front:${CI_BUILD_REF_NAME} ./
     - sh /scripts/docker_login.sh
     - docker tag sheepkai-menu-front:${CI_BUILD_REF_NAME} registry.sheepkai.net:5000/sheepkainet/sheepkai-menu-front:${CI_BUILD_REF_NAME}
     - docker push registry.sheepkai.net:5000/sheepkainet/sheepkai-menu-front:${CI_BUILD_REF_NAME}
-    - sh /scripts/reflesh_cpane.sh sheepkai-menu-front-${CI_BUILD_REF_NAME}
+    - sh /scripts/reflesh_cpane.sh sheepkai-menu-front-${CI_BUILD_REF_NAME} sheepkainet-${CI_BUILD_REF_NAME} 
     - bash /scripts/cloudflare_cache_purge.sh
+    - docker image prune -f

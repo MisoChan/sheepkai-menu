@@ -9,25 +9,30 @@
   text-align: center;
 }
 .menu_icon_img {
-  height: auto;
+  min-width: 90px;
+  min-height: 90px;
 }
 
 @include mixin.media(sp) {
   .menu_icon_img {
-    max-width: 90px;
+    height: 90px;
+    width: 90px;
   }
   .menu_contents {
+    height: 90px;
     width: 90px;
   }
 }
 
 @include mixin.media(tab) {
   .menu_icon_img {
-    max-width: 120px;
+    height: 120px;
+    width: 120px;
   }
 }
 @include mixin.media(pc) {
   .menu_icon_img {
-    max-width: 120px;
+    height: 120px;
+    width: 120px;
   }
 }
