@@ -11,7 +11,7 @@
       </div>
     </div>
     <div id="menu_copyrights">
-      Copyright © 2022-2022 Nano-Shiki All Rights Reserved.
+      Copyright © 2022-{{ getNowYear() }} Nano-Shiki All Rights Reserved.
     </div>
   </div>
 </template>
@@ -33,6 +33,9 @@ export default {
   methods: {
     getFunctionName(key) {
       return this.$translate("FunctionProperty", key)["name"];
+    },
+    getNowYear() {
+      return new Date().getFullYear();
     },
   },
   data: function () {
