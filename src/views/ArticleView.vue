@@ -129,9 +129,10 @@ export default {
         this.$store.commit("setPageTitle", this.article_property.article_title);
         this.pageLoaded = true;
       } catch (exception) {
-        const error_code = !exception.response.data
-          ? "ERR_NETWORK"
-          : exception.response.data.status;
+        const error_code =
+          !exception.response || !exception.response.data
+            ? "ERR_NETWORK"
+            : exception.response.data.status;
         this.$refs.popup.openModal(error_code);
       }
     },
