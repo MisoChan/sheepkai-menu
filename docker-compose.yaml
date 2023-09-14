@@ -2,9 +2,12 @@ version: '3'
 
 services:
   app:
-    image: node:lts # バージョン指定も可能 ex. node:12.16.1
-    container_name: mekur-task-frontend
+    container_name: sheepkai-menu-frontend
     tty: true
+    build:
+      context: .
+      dockerfile: develop_env_docker/Dockerfile
+    ports:
+      - 8000:8080
     volumes:
       - ./src:/src
-    working_dir: "/src"
