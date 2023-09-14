@@ -19,7 +19,7 @@ deploy-production-job: # This job runs in the deploy stage.
     - production
   script:
     - rm -rf ./.git
-    - cp .env.branch-${CI_BUILD_REF_NAME} ".env.production"
+    #- cp .env.branch-${CI_BUILD_REF_NAME} ".env.production"
     - docker build  --no-cache --force-rm=true -t sheepkai-menu-front:${CI_BUILD_REF_NAME} ./
     - sh /scripts/docker_login.sh
     - docker tag sheepkai-menu-front:${CI_BUILD_REF_NAME} registry.sheepkai.net:5000/sheepkainet/sheepkai-menu-front:${CI_BUILD_REF_NAME}
