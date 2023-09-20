@@ -8,6 +8,6 @@ services:
       context: .
       dockerfile: develop_env_docker/Dockerfile
     ports:
-      - 8000:8080
+      - 8081:8080
     volumes:
       - ./src:/src
