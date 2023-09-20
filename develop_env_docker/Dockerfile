@@ -1,14 +1,12 @@
 #nodeイメージをpullする
-FROM node:10.15.3-alpine
+FROM node:18.17.1-alpine
 
 #working directory
 WORKDIR /app
 
-#vuecliインストール
-RUN npm install -g @vue/cli;
+COPY . .
+#インストール
+RUN npm install;
 
 #shファイルをコンテナにコピー
-COPY ./scripts/docker.start.sh /scripts/start.sh
-
-#shフォルダの権限追加（全員実行可）
-RUN chmod +x /scripts/*
+CMD ["npm","run","serve"]
