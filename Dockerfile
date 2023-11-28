@@ -1,8 +1,15 @@
-# ビルド環境
-FROM node:lts-alpine as build-stage
+# パッケージたちのキャッシュ
+FROM node:18.18-slim as cache
+WORKDIR /app
+COPY package.json ./package.json
+COPY package-lock.json ./package-lock.json
+RUN npm install;
+
+FROM node:18.18-slim as build-stage
 WORKDIR /app
 COPY . .
-RUN rm -rf ./node_modules ./package-lock.json;npm install;npm run lint;npm run build --mode $BUILDMODE;
+COPY --from=cache /app/node_modules /app/node_modules
+RUN npm run lint;npm run build --mode $BUILDMODE;
 
 # 環境構築
 FROM nginx:alpine-slim
