@@ -1,12 +1,15 @@
 #nodeイメージをpullする
-FROM node:18.17.1-alpine
-
-#working directory
+# パッケージたちのキャッシュ
+FROM node:18.18-slim as cache
 WORKDIR /app
-
-COPY . .
-#インストール
+COPY package.json ./package.json
+COPY package-lock.json ./package-lock.json
 RUN npm install;
 
-#shファイルをコンテナにコピー
+# 実行
+FROM node:18.18-slim as build-stage
+WORKDIR /app
+COPY . .
+COPY --from=cache /app/node_modules /app/node_modules
+
 CMD ["npm","run","serve"]
