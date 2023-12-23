@@ -1,11 +1,11 @@
 # パッケージたちのキャッシュ
-FROM node:18.18-slim as cache
+FROM node:20.10-slim as cache
 WORKDIR /app
 COPY package.json ./package.json
 COPY package-lock.json ./package-lock.json
 RUN npm install;
 
-FROM node:18.18-slim as build-stage
+FROM node:20.10-slim as build-stage
 WORKDIR /app
 COPY . .
 COPY --from=cache /app/node_modules /app/node_modules
