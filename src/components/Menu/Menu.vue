@@ -1,0 +1,77 @@
+<template>
+  <div id="main_menu">
+    <p class="site_name">{{ this.$translate("Common", "sitename") }}</p>
+    <div id="menu_contents">
+      <MenuContents
+        :item="item"
+        v-for="item in menu_contents"
+        :key="item.content_id"
+      ></MenuContents>
+    </div>
+    <div id="menu_copyrights">
+      <div id="menu_copyrights-text">
+        Copyright © 2022-{{ getNowYear() }} Nano-Shiki All Rights Reserved.
+      </div>
+      <div id="menu_copyrights-sp-text" class="sp-only">
+        <div class="sp-only">Copyright © 2022-{{ getNowYear() }}</div>
+        <div class="sp-only">Nano-Shiki All Rights Reserved.</div>
+      </div>
+    </div>
+  </div>
+</template>
+<style
+  lang="scss"
+  scoped
+  src="@/assets/sass/components/menu/main_menu.scss"
+></style>
+<script>
+import MenuContents from "@/components/Menu/MenuContents.vue";
+export default {
+  name: "MainMenu",
+  components: {
+    MenuContents,
+  },
+  props: {
+    msg: String,
+  },
+  methods: {
+    getFunctionName(key) {
+      return this.$translate("FunctionProperty", key)["name"];
+    },
+    getNowYear() {
+      return new Date().getFullYear();
+    },
+  },
+  data: function () {
+    return {
+      menu_contents: [
+        {
+          imagesrc: "/icons/TV.webp",
+          contents_title: this.getFunctionName("WHATS_NEW"),
+          link: "article?function_cd=WHATS_NEW",
+        },
+        {
+          imagesrc: "/icons/Bin_Bon_Run.webp",
+          contents_title: this.getFunctionName("SORESYS"),
+          link: "article?function_cd=SORESYS&page_no=1",
+        },
+        {
+          imagesrc: "/icons/tool_modoki.webp",
+          contents_title: this.getFunctionName("TOOLS"),
+          link: "article?function_cd=OTHER&article_url=developping",
+        },
+        {
+          imagesrc: "/icons/Radio_Tekina_Something.webp",
+          contents_title: this.getFunctionName("ABOUT_US"),
+          link: "article?function_cd=ABOUT_US",
+        },
+        {
+          imagesrc: "/icons/POST.webp",
+          contents_title: this.getFunctionName("CONTACT"),
+          link: "contact",
+        },
+      ],
+    };
+  },
+};
+</script>

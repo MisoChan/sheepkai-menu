@@ -1,0 +1,18 @@
+{
+    "github":{
+        "name": "Github",
+        "logo": "/icons/sns/github.png"
+    },
+    "skeb":{
+        "name": "Skeb",
+        "logo": "/icons/sns/skeb.png"
+    },
+    "twitter":{
+        "name": "Twitter",
+        "logo": "/icons/sns/twitter.png"
+    },
+    "pixiv":{
+        "name": "pixiv",
+        "logo": "/icons/sns/pixiv.png"
+    }
+}

@@ -1,0 +1,59 @@
+@use "../commons/color_variables.scss" as color_variables;
+@use "../mixin.scss" as mixin;
+
+.article_list_content_box {
+  box-shadow: 2px 2px 5px 0 color_variables.$main_color_activated;
+  margin: 20px 10px 10px 10px;
+  background-color: color_variables.$article_list_background_color;
+  display: grid;
+  grid-template-columns: 15px 5fr 1fr;
+  grid-template-rows: 5fr 1fr;
+  &:active {
+    box-shadow: none;
+    transform: translateY(2px);
+  }
+}
+.article_title {
+  margin: 0.4em 0 0 20px;
+  grid-column: 2/2;
+}
+.upload_date {
+  margin: 0 0 0 20px;
+  grid-column: 2/2;
+  grid-row: 2/2;
+}
+.article_list_content_belt {
+  grid-column: 1/1;
+  grid-row: 1/3;
+  margin: 0 5px 0 0;
+  background-color: color_variables.$accent_color_yerrow;
+}
+.article_list_content_button {
+  width: 100%;
+  text-align: left;
+}
+
+@include mixin.media(sp) {
+  .article_list_content_box {
+    min-height: 110px;
+  }
+  .article_title {
+    font-size: 26px;
+  }
+}
+@include mixin.media(tab) {
+  .article_list_content_box {
+    min-height: 110px;
+  }
+  .article_title {
+    font-size: 30px;
+  }
+}
+@include mixin.media(pc) {
+  .article_list_content_box {
+    height: 150px;
+  }
+  .article_title {
+    font-size: 36px;
+  }
+}

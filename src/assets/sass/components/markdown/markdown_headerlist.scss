@@ -1,0 +1,18 @@
+@use "../../commons/color_variables.scss" as color_variables;
+@use "../../mixin.scss" as mixin;
+
+.header_title {
+  overflow-wrap: break-word;
+  margin: 10px 0px 10px 0;
+}
+
+.md_header_text {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  text-decoration: underline;
+  margin: 10px 0px 10px 0;
+}
+.md_header_text.break {
+  overflow-wrap: break-word;
+}

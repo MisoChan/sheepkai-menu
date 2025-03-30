@@ -1,0 +1,43 @@
+stages: # List of stages for jobs, and their order of execution
+  - develop-deploy
+  - stage-deploy
+  - deploy
+
+image: docker:stable
+
+ci-development-job:
+  stage: develop-deploy
+  only:
+    - develop
+    - ci-working
+  script:
+    - apk add bash
+    - rm -rf ./.git
+    - echo $VUE_APP_API_URL_DEV
+    - docker build --force-rm=true -t sheepkai-menu-front:${CI_COMMIT_REF_NAME} ./ --build-arg VUE_APP_DEFAULT_LANGUAGE=${VUE_APP_DEFAULT_LANGUAGE} --build-arg VUE_APP_API_URL=${VUE_APP_API_URL_DEV}
+    - docker tag sheepkai-menu-front:${CI_COMMIT_REF_NAME} registry.sheepkai.net:5000/sheepkainet/sheepkai-menu-front:${CI_COMMIT_REF_NAME}
+    - docker push registry.sheepkai.net:5000/sheepkainet/sheepkai-menu-front:${CI_COMMIT_REF_NAME}
+
+deploy-stage-job: # This job runs in the deploy stage.
+  stage: stage-deploy # It only runs when *both* jobs in the test stage complete successfully.
+  only:
+    - stage
+  script:
+    - apk add bash
+    - rm -rf ./.git
+    - docker build  --no-cache --force-rm=true -t sheepkai-menu-front:${CI_COMMIT_REF_NAME} ./ --build-arg VUE_APP_DEFAULT_LANGUAGE=${VUE_APP_DEFAULT_LANGUAGE} --build-arg VUE_APP_API_URL=${VUE_APP_API_URL_STG}
+    - docker tag sheepkai-menu-front:${CI_COMMIT_REF_NAME} registry.sheepkai.net:5000/sheepkainet/sheepkai-menu-front:${CI_COMMIT_REF_NAME}
+    - docker push registry.sheepkai.net:5000/sheepkainet/sheepkai-menu-front:${CI_COMMIT_REF_NAME}
+    - docker image prune -f
+
+deploy-production-job: # This job runs in the deploy stage.
+  stage: deploy # It only runs when *both* jobs in the test stage complete successfully.
+  only:
+    - production
+  script:
+    - apk add bash
+    - rm -rf ./.git
+    - docker build  --no-cache --force-rm=true -t sheepkai-menu-front:latest ./ --build-arg VUE_APP_DEFAULT_LANGUAGE=${VUE_APP_DEFAULT_LANGUAGE} --build-arg VUE_APP_API_URL=${VUE_APP_API_URL}
+    - docker tag sheepkai-menu-front:latest registry.sheepkai.net:5000/sheepkainet/sheepkai-menu-front:latest
+    - docker push registry.sheepkai.net:5000/sheepkainet/sheepkai-menu-front:latest
+    - docker image prune -f

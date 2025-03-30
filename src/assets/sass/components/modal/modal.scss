@@ -1,0 +1,20 @@
+@use "../../commons/color_variables.scss" as color_variables;
+@use "../../mixin.scss" as mixin;
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#popup_overray {
+  position: absolute;
+  margin: 0;
+  left: 0;
+  z-index: 91919;
+  width: 100vw;
+  height: calc(100% - 36px);
+  background-color: color_variables.$modal_background_color;
+  animation: show 0.5s linear 0s;
+}

@@ -1,0 +1,120 @@
+{
+    "ja":{
+        "Common": {
+            "sitename": "羊飼いとお道具箱の部屋",
+            "loading": "ロード中…",
+            "loading_subtitle": "データ受信中…"
+        },
+        "MessageAction":{
+            "reload":"再読込",
+            "back": "戻る"
+        },
+        "FunctionProperty": {
+            "MENU":{
+                "name": "Menu",
+                "description": "メインメニュー"
+           },
+           "WHATS_NEW":{
+                "name": "What's New?",
+                "description": "更新情報"
+           },
+           "SORESYS":{
+                "name": "それシス",
+                "description": "それとなくシステムな毎日"
+           },
+           "TOOLS":{
+                "name": "Tools",
+                "description": "便利な道具たち"
+           },
+           "ABOUT_US":{
+                "name": "About us",
+                "description": "このサイトについて"
+           },
+           "CONTACT":{
+                "name": "Contact",
+                "description": "連絡先など"
+           },
+           "PORTFOLIO":{
+                "name": "Portfolio",
+                "description": "ポートフォリオ"
+           }
+        },
+        "Contacts":{
+            "email": "返信用Email(任意)",
+            "company_name": "法人名（法人の方はご記入ください）",
+            "title": "件名",
+            "message": "本文",
+            "clear": "クリア",
+            "submit": "送信",
+            "role": {
+                "sitedevel":"PG",
+                "ilust":"イラスト",
+                "design":"デザイン"
+            },
+            "contact_title":{
+                "admin":"開発＆管理者",
+                "advisor":"相談役"
+            }
+        }
+        
+    },
+    "en":{
+        "Common": {
+            "sitename": "Sheepkai and toolbox Room",
+            "loading": "Loading…"
+        },
+        "MessageAction":{
+            "reload":"Reload",
+            "back": "Back"
+        },
+        "FunctionProperty": {
+            "MENU":{
+               "name": "Menu",
+                "description": "Top menu"
+           },
+           "WHATS_NEW":{
+               "name": "What's New?",
+                "description": "Updates"
+           },
+           "SORESYS":{
+               "name": "Blog",
+                "description": "Soretonaku System na everyday: Subtle System Days"
+           },
+           "TOOLS":{
+               "name": "Tools",
+                "description": "Tools"
+           },
+           "ABOUT_US":{
+               "name": "About us",
+                "description": "About this site"
+           },
+           "CONTACT":{
+               "name": "Contact",
+                "description": "Contact list"
+           },
+                      "PORTFOLIO":{
+                "name": "Portfolio",
+                "description": "portfolio"
+           }
+        },
+        "Contacts":{
+            "email": "返信用Email(任意)",
+            "company_name": "法人名（法人の方はご記入ください）",
+            "title": "件名",
+            "message": "本文",
+            "clear": "クリア",
+            "submit": "送信",
+            "role": {
+                "sitedevel":"Programming",
+                "ilust":"Ilust",
+                "design":"Design"
+            },
+            "contact_title":{
+                "admin":"Administartor",
+                "advisor":"Adviser"
+            }       
+        }          
+
+        
+    }
+}

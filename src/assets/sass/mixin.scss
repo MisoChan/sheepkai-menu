@@ -1,0 +1,17 @@
+$breakpoint: (
+  smallsp: "screen and (max-width: 300px)",
+  sp: "screen and (max-width: 767px)",
+  tab: "screen and (min-width: 768px) and (max-width: 1224px)",
+  pc: "screen and (min-width: 1224px)",
+  widepc: "screen and (min-width: 1525px)",
+);
+
+@mixin media($type) {
+  @media #{map-get($breakpoint, $type)} {
+    @content;
+  }
+}
+
+@mixin mainFont {
+  font-family: "Kiwi Maru", sans-serif;
+}
